@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Text-to-SQL con LoRA</title>
+<style>
+  @page { size: 1280px 720px; margin: 0; }
+  :root { --tinta: #14213d; --suave: #5c6784; --acento: #e0572b; --azul: #2a6fdb; --fondo: #fbfaf7; --linea: #e3e0d8; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: "Segoe UI", system-ui, sans-serif; color: var(--tinta); background: #ccc; }
+  .s { width: 1280px; height: 720px; padding: 56px 72px; background: var(--fondo); position: relative; overflow: hidden;
+       page-break-after: always; break-after: page; display: flex; flex-direction: column; }
+  .s:last-child { page-break-after: auto; }
+  h1 { font-size: 46px; margin: 0 0 8px; letter-spacing: -0.5px; }
+  h2 { font-size: 34px; margin: 0 0 22px; letter-spacing: -0.3px; }
+  h2 small { font-size: 18px; color: var(--suave); font-weight: 400; margin-left: 12px; }
+  p, li { font-size: 21px; line-height: 1.45; }
+  ul { margin: 0; padding-left: 24px; } li { margin-bottom: 8px; }
+  .num { position: absolute; bottom: 22px; right: 36px; font-size: 14px; color: var(--suave); }
+  .tag { display: inline-block; font-size: 14px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
+         color: var(--acento); margin-bottom: 10px; }
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; flex: 1; min-height: 0; }
+  .cols3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .card { background: #fff; border: 1px solid var(--linea); border-radius: 10px; padding: 18px 22px; }
+  .card b { display: block; font-size: 40px; color: var(--azul); }
+  .card span { font-size: 17px; color: var(--suave); }
+  table { border-collapse: collapse; width: 100%; font-size: 18px; }
+  th { text-align: left; color: var(--suave); font-weight: 600; border-bottom: 2px solid var(--tinta); padding: 6px 8px; }
+  td { border-bottom: 1px solid var(--linea); padding: 7px 8px; }
+  td.n, th.n { text-align: right; font-variant-numeric: tabular-nums; }
+  tr.hl td { background: #fff1ea; font-weight: 600; }
+  img { max-width: 100%; max-height: 100%; object-fit: contain; }
+  code, pre { font-family: Consolas, monospace; font-size: 16px; }
+  pre { background: #fff; border: 1px solid var(--linea); border-radius: 8px; padding: 14px 16px; margin: 0; white-space: pre-wrap; }
+  .portada { justify-content: center; background: var(--tinta); color: #fff; }
+  .portada p { color: #c9d1e6; }
+  .portada .tag { color: #ffb08f; }
+  .big { font-size: 64px; font-weight: 700; color: var(--acento); line-height: 1; }
+  .nota { font-size: 16px; color: var(--suave); }
+</style>
+</head>
+<body>
+
+<section class="s portada">
+  <span class="tag">Deep Learning 2026 · Proyecto 3</span>
+  <h1>Text-to-SQL en español con LoRA</h1>
+  <p style="font-size:26px">Qwen2.5-Coder-1.5B-Instruct + adapter LoRA → consultas MySQL 8.4.10</p>
+  <p style="margin-top:40px">Andrés Mazariegos · June Herrera<br>Universidad del Valle de Guatemala · octubre 2026</p>
+</section>
+
+<section class="s">
+  <span class="tag">Problema</span>
+  <h2>Dado un esquema y una pregunta, generar una consulta correcta</h2>
+  <div class="cols">
+    <ul>
+      <li><b>Entrada:</b> <code>SHOW CREATE TABLE</code> con <code>COMMENT</code> + pregunta en español</li>
+      <li><b>Salida:</b> una sola <code>SELECT</code> / <code>WITH … SELECT</code></li>
+      <li>MySQL 8.4.10 con <code>ONLY_FULL_GROUP_BY</code></li>
+      <li>≤ 30 s por pregunta, determinista, Colab T4</li>
+      <li>Se evalúa con bases y preguntas <b>que no conocemos</b></li>
+    </ul>
+    <div>
+      <p><b>Métrica: EX ponderada</b> (exactitud por ejecución)</p>
+      <table>
+        <tr><th>Nivel</th><th>Contenido</th><th class="n">Peso</th></tr>
+        <tr><td>fácil</td><td>una tabla</td><td class="n">1</td></tr>
+        <tr><td>media</td><td>JOIN, GROUP BY, HAVING</td><td class="n">2</td></tr>
+        <tr><td>difícil</td><td>subconsultas, WITH, ventanas, fechas</td><td class="n">3</td></tr>
+      </table>
+      <p class="nota">Orden solo si se pide · números a 2 decimales · columna extra no penaliza</p>
+    </div>
+  </div>
+  <div class="num">2</div>
+</section>
+
+<section class="s">
+  <span class="tag">Datos</span>
+  <h2>10 158 pares válidos en MySQL 8.4.10 <small>865 descartados, con motivo</small></h2>
+  <div class="cols3" style="margin-bottom:26px">
+    <div class="card"><b>8 828</b><span>Spider → MySQL, preguntas traducidas (opus-mt-en-es) protegiendo literales</span></div>
+    <div class="card"><b>1 330</b><span>pares generados con LLM sobre 18 esquemas propios con COMMENT y nombres abreviados</span></div>
+    <div class="card"><b>40</b><span>preguntas de validación en 2 esquemas no vistos (partición por esquema)</span></div>
+  </div>
+  <div class="cols">
+    <ul>
+      <li>Spider: se carga cada SQLite en MySQL, se transpila con <code>sqlglot</code> y se exige <b>mismo resultado</b> que en SQLite</li>
+      <li>La mitad de las bases Spider recibe <code>COMMENT</code> en español</li>
+      <li>Esquemas propios: ventanas, CTE, fechas, LEFT JOIN con ceros: lo que Spider no tiene</li>
+    </ul>
+    <table>
+      <tr><th>Descarte</th><th class="n">Pares</th></tr>
+      <tr><td>resultado distinto a SQLite</td><td class="n">408</td></tr>
+      <tr><td>error en MySQL (ONLY_FULL_GROUP_BY…)</td><td class="n">191</td></tr>
+      <tr><td>prompt &gt; 2 048 tokens</td><td class="n">183</td></tr>
+      <tr><td>traducción alteró un literal</td><td class="n">83</td></tr>
+    </table>
+  </div>
+  <div class="num">3</div>
+</section>
+
+<section class="s">
+  <span class="tag">Prompt y solución</span>
+  <h2>Mismo prompt para baseline, entrenamiento y entrega</h2>
+  <div class="cols">
+    <pre>system: Eres un experto en bases de datos MySQL 8.4 …
+        Responde únicamente con una consulta SQL …
+user:   Esquema:
+        CREATE TABLE `ord_srv` (
+          `id_ord` int NOT NULL COMMENT 'Número de orden',
+          `f_ing` date NOT NULL COMMENT 'Fecha de ingreso',
+          …
+          FOREIGN KEY (`id_veh`) REFERENCES `veh` (`id_veh`)
+        ) COMMENT='Órdenes de servicio';
+        Pregunta: ¿Cuántas órdenes …?
+assistant: SELECT …</pre>
+    <ul>
+      <li><code>compactar_esquema</code>: quita ENGINE, CHARSET, índices secundarios; conserva tipos, COMMENT, PK, FK</li>
+      <li>Decodificación voraz, una sola sentencia (primera SELECT/WITH, corte en <code>;</code>)</li>
+      <li>fp16 en T4: carga en 12 s y tarda 1–4 s por pregunta</li>
+      <li>Pérdida solo sobre los tokens de la SQL</li>
+    </ul>
+  </div>
+  <div class="num">4</div>
+</section>
+
+<section class="s">
+  <span class="tag">LoRA: un solo factor</span>
+  <h2>¿Dónde poner LoRA: solo atención o también MLP?</h2>
+  <div class="cols">
+    <table>
+      <tr><th></th><th>A · <code>lora_attn</code></th><th>B · <code>lora_all</code></th></tr>
+      <tr><td>Módulos</td><td>q, k, v, o</td><td>+ gate, up, down</td></tr>
+      <tr><td>Parámetros entrenables</td><td>4.36 M (0.28 %)</td><td>18.46 M (1.18 %)</td></tr>
+      <tr><td>Tiempo (RTX 5070 Laptop)</td><td>77.7 min</td><td>92.7 min</td></tr>
+      <tr><td>VRAM máx</td><td>3.76 GB</td><td>4.11 GB</td></tr>
+      <tr><td>Loss dev final</td><td>0.144</td><td><b>0.130</b></td></tr>
+      <tr class="hl"><td>EX ponderada</td><td>0.388</td><td>0.450</td></tr>
+    </table>
+    <div>
+      <p><b>Hipótesis (antes de entrenar):</b> B &gt; A. Las MLP guardan los patrones de generación (dialecto, CTE,
+      ventanas); la atención decide sobre todo <i>a qué columnas mirar</i>.</p>
+      <p><b>Resultado: confirmada.</b> A arregla las fáciles (7→10/12); B además las medias (6→10/16).</p>
+      <p class="nota">Comunes: r=16, α=32, lr 2e-4 coseno, batch efectivo 16, 1 época, 6 532 ejemplos.</p>
+    </div>
+  </div>
+  <div class="num">5</div>
+</section>
+
+<section class="s">
+  <span class="tag">Entrenamiento</span>
+  <h2>Curvas de loss <small>la oscilación de train viene de agrupar por longitud</small></h2>
+  <div style="flex:1;min-height:0;display:flex;justify-content:center"><img src="../resultados/curvas_loss.png"></div>
+  <div class="num">6</div>
+</section>
+
+<section class="s">
+  <span class="tag">Resultados</span>
+  <h2>Validación propia: 40 preguntas, 2 esquemas no vistos</h2>
+  <div class="cols">
+    <table>
+      <tr><th>Modelo</th><th class="n">EX</th><th class="n">F</th><th class="n">M</th><th class="n">D</th></tr>
+      <tr><td>Baseline</td><td class="n">0.325</td><td class="n">7/12</td><td class="n">8/16</td><td class="n">1/12</td></tr>
+      <tr><td>A (atención)</td><td class="n">0.388</td><td class="n">10/12</td><td class="n">6/16</td><td class="n">3/12</td></tr>
+      <tr><td>B (atención+MLP)</td><td class="n">0.450</td><td class="n">10/12</td><td class="n">10/16</td><td class="n">2/12</td></tr>
+      <tr><td>B + autocorrección</td><td class="n">0.500</td><td class="n">10/12</td><td class="n">12/16</td><td class="n">2/12</td></tr>
+      <tr><td>Final</td><td class="n">0.525</td><td class="n">11/12</td><td class="n">11/16</td><td class="n">3/12</td></tr>
+      <tr class="hl"><td>Final + autocorrección</td><td class="n">0.550</td><td class="n">11/12</td><td class="n">12/16</td><td class="n">3/12</td></tr>
+      <tr class="hl"><td>  … en fp16 (T4)</td><td class="n">0.613</td><td class="n">11/12</td><td class="n">13/16</td><td class="n">4/12</td></tr>
+      <tr><td colspan="5" class="nota">Base + autocorrección: 0.375 (bf16) / 0.313 (fp16) → mejora +0.175 / +0.30</td></tr>
+    </table>
+    <div style="min-height:0;display:flex;align-items:center"><img src="../resultados/ex_comparacion.png"></div>
+  </div>
+  <div class="num">7</div>
+</section>
+
+<section class="s">
+  <span class="tag">Experimento de inferencia</span>
+  <h2>Autocorrección con <code>ejecutar</code></h2>
+  <div class="cols">
+    <div>
+      <ol style="font-size:21px;line-height:1.5;padding-left:24px">
+        <li>Generar la consulta</li>
+        <li><code>ejecutar(sql)</code> → si hay error, se agrega al diálogo:<br>
+          <i>"La consulta falló en MySQL con este error: … Corrígela"</i></li>
+        <li>Regenerar (máx. 3 llamadas, tope interno de 22 s)</li>
+      </ol>
+      <p class="nota">Solo detecta errores de ejecución; no corrige consultas que corren pero responden otra cosa.</p>
+    </div>
+    <table>
+      <tr><th></th><th class="n">sin</th><th class="n">con</th><th class="n">Δ</th></tr>
+      <tr><td>Baseline</td><td class="n">0.325</td><td class="n">0.375</td><td class="n">+0.050</td></tr>
+      <tr><td>Config B</td><td class="n">0.450</td><td class="n">0.500</td><td class="n">+0.050</td></tr>
+      <tr class="hl"><td>Final</td><td class="n">0.525</td><td class="n">0.550</td><td class="n">+0.025</td></tr>
+      <tr><td colspan="4" class="nota">Columna inexistente final: 8 → 4 · ejecutan 32 → 35 · 3.1 s prom., 18.1 s máx. (&lt; 30 s)</td></tr>
+    </table>
+  </div>
+  <div class="num">8</div>
+</section>
+
+<section class="s">
+  <span class="tag">Análisis de errores</span>
+  <h2>¿En qué se equivoca?</h2>
+  <div class="cols">
+    <div style="min-height:0;display:flex;align-items:center"><img src="../resultados/errores_categoria.png"></div>
+    <ul style="font-size:19px">
+      <li><b>Columna inexistente</b> (baseline 17): inventa <code>t.att_first_name</code>; el fine-tuning y la autocorrección lo bajan a 3–4</li>
+      <li><b>Agregación en dos niveles</b>: <code>SUM(x + SUM(y))</code>, olvida comparar con el promedio del grupo</li>
+      <li><b>JOIN</b>: la columna está a 2–3 saltos (cliente → vehículo → orden) y toma un atajo</li>
+      <li><b>COUNT(*) con LEFT JOIN</b>: cuenta 1 donde debía ser 0</li>
+      <li><b>Filtro</b>: "taller (workshop)" → <code>'talk'</code>; omite <code>IS NOT NULL</code></li>
+      <li><b>Difíciles</b> (3–4/12): combinar agregaciones de tablas distintas sigue fuera del alcance de 1.5B</li>
+    </ul>
+  </div>
+  <div class="num">9</div>
+</section>
+
+<section class="s">
+  <span class="tag">Modelo final</span>
+  <h2>Datos dirigidos a los errores + 2 épocas</h2>
+  <div class="cols">
+    <ul>
+      <li>6 esquemas nuevos (veterinaria, gimnasio, inmobiliaria, logística, cine, proyectos de software), 486 pares</li>
+      <li>~40 % difíciles: JOIN de 3–4 tablas, misma tabla unida dos veces, LEFT JOIN con <code>COUNT(col)</code>, pre-agregación de detalle</li>
+      <li>Config B (atención + MLP), 2 épocas: la loss de dev de B seguía bajando</li>
+    </ul>
+    <div>
+      <div style="height:300px;display:flex"><img src="../resultados/curva_final.png"></div>
+      <p style="font-size:18px">EX 0.450 → <b>0.525</b> (sin autocorrección) · JOIN 6 → 4 · difíciles 2 → 3.
+      La loss de dev toca su mínimo en la época 1 (0.132) y sube a 0.147: hay algo de sobreajuste de estilo, pero la EX
+      (que acepta consultas equivalentes) mejora, así que entregamos el de 2 épocas.</p>
+    </div>
+  </div>
+  <div class="num">10</div>
+</section>
+
+<section class="s">
+  <span class="tag">Predicción</span>
+  <h2>EX esperada en la evaluación oculta</h2>
+  <div class="cols">
+    <div>
+      <div class="big">≈ 0.55</div>
+      <p>con adapter · intervalo 0.42–0.68</p>
+      <div class="big" style="font-size:44px;color:var(--suave);margin-top:18px">≈ 0.33</div>
+      <p>sin adapter → mejora ≈ +0.20</p>
+    </div>
+    <ul style="font-size:18px">
+      <li><b>Validación que imita el formato oculto:</b> 0.55 (bf16) / 0.61 (fp16, T4) en esquemas no vistos</li>
+      <li><b>Por nivel:</b> fácil 92 %, media 75–80 %, difícil 25–33 %. Con 12/14/10 preguntas → ≈ 0.59; más difíciles → ≈ 0.50</li>
+      <li><b>Ruido:</b> bf16 frente a fp16 cambia 6 puntos solo por redondeo → error estándar ≈ 0.08</li>
+      <li><b>Sesgos:</b> nuestras trampas pueden ser más duras (+); validación y entrenamiento escritos con estilo parecido (−)</li>
+      <li><b>Mejora estable:</b> +0.125 / +0.175 / +0.30 en todas las condiciones → esperamos superar +0.15</li>
+    </ul>
+  </div>
+  <div class="num">11</div>
+</section>
+
+<section class="s">
+  <span class="tag">Cierre</span>
+  <h2>Lecciones</h2>
+  <ul>
+    <li><b>Validar ejecutando, no confiando:</b> 865 pares descartados; el 47 % corría en MySQL pero respondía otra cosa</li>
+    <li><b>Datos dirigidos a los errores:</b> 486 pares sobre los patrones fallidos + una 2.ª época: EX 0.45 → 0.525 (sin separar ambos efectos)</li>
+    <li><b>LoRA en MLP</b> rinde más que solo en atención, a cambio de 4× parámetros (que siguen siendo &lt; 1.2 %)</li>
+    <li><b>8 GB de VRAM:</b> batch 1 + logits solo para la respuesta: de 117 s a 11 s por paso (sin desbordar a RAM)</li>
+    <li><b>Límite actual:</b> razonamiento de varios pasos (JOIN lejanos, agregaciones combinadas) en un modelo de 1.5B</li>
+  </ul>
+  <p class="nota" style="margin-top:auto">Uso de IA: Claude Code como asistente de código, generación de pares sobre esquemas propios y redacción (detalle en README). Inferencia: solo Qwen2.5-Coder-1.5B + adapter.</p>
+  <div class="num">12</div>
+</section>
+
+</body>
+</html>
