@@ -1,0 +1,7 @@
+# Probado en Google Colab (GPU T4, Python 3.12) usando el torch preinstalado de Colab.
+transformers==5.20.2
+peft==0.21.2
+accelerate==1.15.0
+# Solo para los scripts de datos/evaluación locales (no los necesita solucion.py):
+pymysql==1.2.3
+sqlglot==30.24.0

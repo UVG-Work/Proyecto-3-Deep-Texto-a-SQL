@@ -1,0 +1,6 @@
+{
+  "modelo_base": "Qwen/Qwen2.5-Coder-1.5B-Instruct",
+  "adapter": "adapter/",
+  "usar_adapter": true,
+  "semilla": 2026
+}
