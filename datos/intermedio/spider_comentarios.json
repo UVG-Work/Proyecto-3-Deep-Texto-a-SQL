@@ -1,0 +1,3573 @@
+{
+"flight_company": {
+"airport": {
+"id": "id",
+"City": "ciudad",
+"Country": "país",
+"IATA": "iata",
+"ICAO": "icao",
+"name": "nombre",
+"__tabla__": "aeropuerto"
+},
+"operate_company": {
+"id": "id",
+"name": "nombre",
+"Type": "tipo",
+"Principal_activities": "Principales actividades",
+"Incorporated_in": "incorporados en",
+"Group_Equity_Shareholding": "Participación en acciones de grupo",
+"__tabla__": "empresa operadora"
+},
+"flight": {
+"id": "id",
+"Vehicle_Flight_number": "número de vuelo del vehículo",
+"Date": "fecha",
+"Pilot": "piloto",
+"Velocity": "velocidad",
+"Altitude": "altitud",
+"airport_id": "id del aeropuerto",
+"company_id": "id de la empresa",
+"__tabla__": "vuelo"
+}
+},
+"department_store": {
+"Addresses": {
+"address_id": "dirección id",
+"address_details": "detalles de la dirección",
+"__tabla__": "direcciones"
+},
+"Staff": {
+"staff_id": "id de personal",
+"staff_gender": "Género del personal",
+"staff_name": "Nombre del funcionario",
+"__tabla__": "Personal"
+},
+"Suppliers": {
+"supplier_id": "id del proveedor",
+"supplier_name": "Nombre del proveedor",
+"supplier_phone": "Teléfono del proveedor",
+"__tabla__": "proveedores"
+},
+"Department_Store_Chain": {
+"dept_store_chain_id": "id de la cadena de grandes almacenes",
+"dept_store_chain_name": "nombre de la cadena de grandes almacenes",
+"__tabla__": "cadena de grandes almacenes"
+},
+"Customers": {
+"customer_id": "id del cliente",
+"payment_method_code": "Código del método de pago",
+"customer_code": "Código del cliente",
+"customer_name": "nombre del cliente",
+"customer_address": "dirección del cliente",
+"customer_phone": "teléfono del cliente",
+"customer_email": "correo electrónico del cliente",
+"__tabla__": "clientes"
+},
+"Products": {
+"product_id": "id del producto",
+"product_type_code": "Código del tipo de producto",
+"product_name": "nombre del producto",
+"product_price": "Precio del producto",
+"__tabla__": "Productos"
+},
+"Supplier_Addresses": {
+"supplier_id": "id del proveedor",
+"address_id": "dirección id",
+"date_from": "fecha a partir de",
+"date_to": "fecha a",
+"__tabla__": "Dirección del proveedor"
+},
+"Customer_Addresses": {
+"customer_id": "id del cliente",
+"address_id": "dirección id",
+"date_from": "fecha a partir de",
+"date_to": "fecha a",
+"__tabla__": "direcciones del cliente"
+},
+"Customer_Orders": {
+"order_id": "id de orden",
+"customer_id": "id del cliente",
+"order_status_code": "código de estado del pedido",
+"order_date": "fecha del pedido",
+"__tabla__": "pedidos de clientes"
+},
+"Department_Stores": {
+"dept_store_id": "id de los grandes almacenes",
+"dept_store_chain_id": "id de la cadena de grandes almacenes",
+"store_name": "nombre de la tienda",
+"store_address": "dirección del almacén",
+"store_phone": "almacenar el teléfono",
+"store_email": "almacenar el correo electrónico",
+"__tabla__": "grandes almacenes"
+},
+"Departments": {
+"department_id": "department id",
+"dept_store_id": "id de los grandes almacenes",
+"department_name": "nombre del departamento",
+"__tabla__": "Departamentos"
+},
+"Order_Items": {
+"order_item_id": "id del elemento de pedido",
+"order_id": "id de orden",
+"product_id": "id del producto",
+"__tabla__": "artículos de pedido"
+},
+"Product_Suppliers": {
+"product_id": "id del producto",
+"supplier_id": "id del proveedor",
+"date_supplied_from": "fecha de entrega a partir de",
+"date_supplied_to": "fecha de entrega a",
+"total_amount_purchased": "Cantidad total comprada",
+"total_value_purchased": "valor total adquirido",
+"__tabla__": "proveedores de productos"
+},
+"Staff_Department_Assignments": {
+"staff_id": "id de personal",
+"department_id": "department id",
+"date_assigned_from": "fecha asignada a partir de",
+"job_title_code": "código del título del trabajo",
+"date_assigned_to": "fecha asignada a",
+"__tabla__": "Tareas de los departamentos de personal"
+}
+},
+"music_4": {
+"artist": {
+"Artist_ID": "artist id",
+"Artist": "artista",
+"Age": "edad",
+"Famous_Title": "título famoso",
+"Famous_Release_date": "fecha de lanzamiento famosa",
+"__tabla__": "artista"
+},
+"volume": {
+"Volume_ID": "id de volumen",
+"Volume_Issue": "Número de volumen",
+"Issue_Date": "Fecha de emisión",
+"Weeks_on_Top": "semanas por encima",
+"Song": "canción",
+"Artist_ID": "artist id",
+"__tabla__": "volumen"
+},
+"music_festival": {
+"ID": "id",
+"Music_Festival": "festival de música",
+"Date_of_ceremony": "Fecha de la ceremonia",
+"Category": "Categoría",
+"Volume": "volumen",
+"Result": "resultado",
+"__tabla__": "festival de música"
+}
+},
+"insurance_fnol": {
+"Customers": {
+"Customer_ID": "id del cliente",
+"Customer_name": "nombre del cliente",
+"__tabla__": "clientes"
+},
+"Services": {
+"Service_ID": "id de servicio",
+"Service_name": "nombre de servicio",
+"__tabla__": "servicios"
+},
+"Available_Policies": {
+"Policy_ID": "policy id",
+"policy_type_code": "código de tipo de política",
+"Customer_Phone": "teléfono del cliente",
+"__tabla__": "Políticas disponibles"
+},
+"Customers_Policies": {
+"Customer_ID": "id del cliente",
+"Policy_ID": "policy id",
+"Date_Opened": "fecha de apertura",
+"Date_Closed": "fecha de cierre",
+"__tabla__": "políticas de los clientes"
+},
+"First_Notification_of_Loss": {
+"FNOL_ID": "fnol id",
+"Customer_ID": "id del cliente",
+"Policy_ID": "policy id",
+"Service_ID": "id de servicio",
+"__tabla__": "primera notificación de la pérdida"
+},
+"Claims": {
+"Claim_ID": "id de reclamación",
+"FNOL_ID": "fnol id",
+"Effective_Date": "fecha de entrada en vigor",
+"__tabla__": "reclamaciones"
+},
+"Settlements": {
+"Settlement_ID": "id de liquidación",
+"Claim_ID": "id de reclamación",
+"Effective_Date": "fecha de entrada en vigor",
+"Settlement_Amount": "Importe de la liquidación",
+"__tabla__": "asentamientos"
+}
+},
+"cinema": {
+"film": {
+"Film_ID": "id de película",
+"Rank_in_series": "rango en serie",
+"Number_in_season": "número en la temporada",
+"Title": "Título",
+"Directed_by": "dirigida por",
+"Original_air_date": "Fecha de emisión original",
+"Production_code": "Código de producción",
+"__tabla__": "película"
+},
+"cinema": {
+"Cinema_ID": "cinema id",
+"Name": "nombre",
+"Openning_year": "Año de apertura",
+"Capacity": "capacidad",
+"Location": "ubicación",
+"__tabla__": "cine"
+},
+"schedule": {
+"Cinema_ID": "cinema id",
+"Film_ID": "id de película",
+"Date": "fecha",
+"Show_times_per_day": "Tiempos de exposición por día",
+"Price": "precio",
+"__tabla__": "programar"
+}
+},
+"phone_market": {
+"phone": {
+"Name": "nombre",
+"Phone_ID": "id de teléfono",
+"Memory_in_G": "memoria en g",
+"Carrier": "portador",
+"Price": "precio",
+"__tabla__": "teléfono"
+},
+"market": {
+"Market_ID": "id de mercado",
+"District": "distrito",
+"Num_of_employees": "Número de empleados",
+"Num_of_shops": "Número de tiendas",
+"Ranking": "clasificación",
+"__tabla__": "mercado"
+},
+"phone_market": {
+"Market_ID": "id de mercado",
+"Phone_ID": "id de teléfono",
+"Num_of_stock": "Número de existencias",
+"__tabla__": "mercado telefónico"
+}
+},
+"store_product": {
+"product": {
+"product_id": "id del producto",
+"product": "producto",
+"dimensions": "dimensiones",
+"dpi": "dpi",
+"pages_per_minute_color": "páginas por minuto color",
+"max_page_size": "Tamaño máximo de página",
+"interface": "interfaz",
+"__tabla__": "producto"
+},
+"store": {
+"Store_ID": "id de almacenamiento",
+"Store_Name": "nombre de la tienda",
+"Type": "tipo",
+"Area_size": "Tamaño del área",
+"Number_of_product_category": "número de categoría de producto",
+"Ranking": "clasificación",
+"__tabla__": "almacenar"
+},
+"district": {
+"District_ID": "district id",
+"District_name": "nombre del distrito",
+"Headquartered_City": "Ciudad con sede central",
+"City_Population": "Población urbana",
+"City_Area": "zona de la ciudad",
+"__tabla__": "distrito"
+},
+"store_product": {
+"Store_ID": "id de almacenamiento",
+"Product_ID": "id del producto",
+"__tabla__": "almacenar el producto"
+},
+"store_district": {
+"Store_ID": "id de almacenamiento",
+"District_ID": "district id",
+"__tabla__": "distrito de la tienda"
+}
+},
+"assets_maintenance": {
+"Third_Party_Companies": {
+"company_id": "id de la empresa",
+"company_type": "Tipo de empresa",
+"company_name": "Nombre de la empresa",
+"company_address": "Dirección de la empresa",
+"other_company_details": "otros datos de la empresa",
+"__tabla__": "empresas de terceros"
+},
+"Maintenance_Contracts": {
+"maintenance_contract_id": "id del contrato de mantenimiento",
+"maintenance_contract_company_id": "contrato de mantenimiento de la empresa id",
+"contract_start_date": "Fecha de inicio del contrato",
+"contract_end_date": "Fecha de finalización del contrato",
+"other_contract_details": "otros detalles del contrato",
+"__tabla__": "contratos de mantenimiento"
+},
+"Parts": {
+"part_id": "parte id",
+"part_name": "nombre de la parte",
+"chargeable_yn": "yenes recargables",
+"chargeable_amount": "cantidad imputable",
+"other_part_details": "otros detalles de la parte",
+"__tabla__": "partes"
+},
+"Skills": {
+"skill_id": "id de la habilidad",
+"skill_code": "código de habilidad",
+"skill_description": "descripción de la habilidad",
+"__tabla__": "Competencias"
+},
+"Staff": {
+"staff_id": "id de personal",
+"staff_name": "Nombre del funcionario",
+"gender": "género",
+"other_staff_details": "otros detalles del personal",
+"__tabla__": "Personal"
+},
+"Assets": {
+"asset_id": "asset id",
+"maintenance_contract_id": "id del contrato de mantenimiento",
+"supplier_company_id": "Empresa proveedora id",
+"asset_details": "Detalles del activo",
+"asset_make": "asset make",
+"asset_model": "modelo de activo",
+"asset_acquired_date": "fecha de adquisición del activo",
+"asset_disposed_date": "fecha de enajenación del activo",
+"other_asset_details": "otros detalles del activo",
+"__tabla__": "activo"
+},
+"Asset_Parts": {
+"asset_id": "asset id",
+"part_id": "parte id",
+"__tabla__": "partes de activos"
+},
+"Maintenance_Engineers": {
+"engineer_id": "Engineer id",
+"company_id": "id de la empresa",
+"first_name": "nombre",
+"last_name": "apellido",
+"other_details": "otros detalles",
+"__tabla__": "Ingenieros de mantenimiento"
+},
+"Engineer_Skills": {
+"engineer_id": "Engineer id",
+"skill_id": "id de la habilidad",
+"__tabla__": "técnicas de ingeniería"
+},
+"Fault_Log": {
+"fault_log_entry_id": "id de entrada de registro de fallos",
+"asset_id": "asset id",
+"recorded_by_staff_id": "registrados por el personal id",
+"fault_log_entry_datetime": "fecha de entrada del registro de fallas",
+"fault_description": "Descripción de la falla",
+"other_fault_details": "otros detalles de falla",
+"__tabla__": "registro de fallas"
+},
+"Engineer_Visits": {
+"engineer_visit_id": "id de visita del ingeniero",
+"contact_staff_id": "contacto con el personal id",
+"engineer_id": "Engineer id",
+"fault_log_entry_id": "id de entrada de registro de fallos",
+"fault_status": "estado de falla",
+"visit_start_datetime": "hora de inicio de la visita",
+"visit_end_datetime": "hora de finalización de la visita",
+"other_visit_details": "otros detalles de la visita",
+"__tabla__": "visitas de ingenieros"
+},
+"Part_Faults": {
+"part_fault_id": "id de fallo de parte",
+"part_id": "parte id",
+"fault_short_name": "nombre abreviado de fallo",
+"fault_description": "Descripción de la falla",
+"other_fault_details": "otros detalles de falla",
+"__tabla__": "fallas de la parte"
+},
+"Fault_Log_Parts": {
+"fault_log_entry_id": "id de entrada de registro de fallos",
+"part_fault_id": "id de fallo de parte",
+"fault_status": "estado de falla",
+"__tabla__": "partes del registro de fallas"
+},
+"Skills_Required_To_Fix": {
+"part_fault_id": "id de fallo de parte",
+"skill_id": "id de la habilidad",
+"__tabla__": "habilidades necesarias para fijar"
+}
+},
+"student_assessment": {
+"Addresses": {
+"address_id": "dirección id",
+"line_1": "línea 1",
+"line_2": "línea 2",
+"city": "ciudad",
+"zip_postcode": "código postal zip",
+"state_province_county": "provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia",
+"country": "país",
+"__tabla__": "direcciones"
+},
+"People": {
+"person_id": "person id",
+"first_name": "nombre",
+"middle_name": "segundo nombre",
+"last_name": "apellido",
+"cell_mobile_number": "número de móvil celular",
+"email_address": "dirección de correo electrónico",
+"login_name": "nombre de inicio de sesión",
+"password": "contraseña",
+"__tabla__": "personas"
+},
+"Students": {
+"student_id": "id de estudiante",
+"student_details": "Detalles del estudiante",
+"__tabla__": "estudiantes"
+},
+"Courses": {
+"course_id": "id de curso",
+"course_name": "nombre del curso",
+"course_description": "Descripción del curso",
+"other_details": "otros detalles",
+"__tabla__": "cursos"
+},
+"People_Addresses": {
+"person_address_id": "dirección de la persona id",
+"person_id": "person id",
+"address_id": "dirección id",
+"date_from": "fecha a partir de",
+"date_to": "fecha a",
+"__tabla__": "direcciones de las personas"
+},
+"Student_Course_Registrations": {
+"student_id": "id de estudiante",
+"course_id": "id de curso",
+"registration_date": "fecha de inscripción",
+"__tabla__": "matrículas de estudiantes"
+},
+"Student_Course_Attendance": {
+"student_id": "id de estudiante",
+"course_id": "id de curso",
+"date_of_attendance": "Fecha de asistencia",
+"__tabla__": "Asistencia a cursos de estudiantes"
+},
+"Candidates": {
+"candidate_id": "candidato id",
+"candidate_details": "detalles del candidato",
+"__tabla__": "candidatos"
+},
+"Candidate_Assessments": {
+"candidate_id": "candidato id",
+"qualification": "cualificación",
+"assessment_date": "Fecha de la evaluación",
+"asessment_outcome_code": "Código de resultado de la evaluación",
+"__tabla__": "cuotas de los candidatos"
+}
+},
+"music_1": {
+"genre": {
+"g_name": "nombre de género",
+"rating": "calificación",
+"most_popular_in": "más popular en",
+"__tabla__": "género"
+},
+"artist": {
+"artist_name": "nombre del artista",
+"country": "país",
+"gender": "género",
+"preferred_genre": "género preferido",
+"__tabla__": "artista"
+},
+"files": {
+"f_id": "id de canción",
+"artist_name": "nombre del artista",
+"file_size": "tamaño del archivo",
+"duration": "duración",
+"formats": "formatos",
+"__tabla__": "archivos"
+},
+"song": {
+"song_name": "nombre de la canción",
+"artist_name": "nombre del artista",
+"country": "país",
+"f_id": "id de canción",
+"genre_is": "género es",
+"rating": "calificación",
+"languages": "idiomas",
+"releasedate": "liberate",
+"resolution": "resolución",
+"__tabla__": "canción"
+}
+},
+"company_employee": {
+"people": {
+"People_ID": "personas id",
+"Age": "edad",
+"Name": "nombre",
+"Nationality": "nacionalidad",
+"Graduation_College": "grado universitario",
+"__tabla__": "personas"
+},
+"company": {
+"Company_ID": "id de la empresa",
+"Name": "nombre",
+"Headquarters": "cuartel general",
+"Industry": "industria",
+"Sales_in_Billion": "ventas en miles de millones",
+"Profits_in_Billion": "beneficios en miles de millones",
+"Assets_in_Billion": "activos en miles de millones",
+"Market_Value_in_Billion": "valor de mercado en miles de millones",
+"__tabla__": "empresa"
+},
+"employment": {
+"Company_ID": "id de la empresa",
+"People_ID": "personas id",
+"Year_working": "año de trabajo",
+"__tabla__": "empleo"
+}
+},
+"city_record": {
+"city": {
+"City_ID": "id de ciudad",
+"City": "ciudad",
+"Hanzi": "hanzi",
+"Hanyu_Pinyin": "hanyu pinyin",
+"Regional_Population": "población regional",
+"GDP": "gdp",
+"__tabla__": "ciudad"
+},
+"match": {
+"Match_ID": "id de coincidencia",
+"Date": "fecha",
+"Venue": "lugar de celebración",
+"Score": "puntuación",
+"Result": "resultado",
+"Competition": "competencia",
+"__tabla__": "igualar"
+},
+"temperature": {
+"City_ID": "id de ciudad",
+"Jan": "jan",
+"Feb": "feb",
+"Mar": "mar",
+"Apr": "apr",
+"Jun": "jun",
+"Jul": "jul",
+"Aug": "aug",
+"Sep": "sep",
+"Oct": "oct",
+"Nov": "nov",
+"Dec": "dec",
+"__tabla__": "temperatura"
+},
+"hosting_city": {
+"Year": "año",
+"Match_ID": "id de coincidencia",
+"Host_City": "ciudad anfitriona",
+"__tabla__": "ciudad anfitriona"
+}
+},
+"manufactory_1": {
+"Manufacturers": {
+"Code": "código",
+"Name": "nombre",
+"Headquarter": "Sede",
+"Founder": "fundador",
+"Revenue": "Ingresos",
+"__tabla__": "fabricantes"
+},
+"Products": {
+"Code": "código",
+"Name": "nombre",
+"Price": "precio",
+"Manufacturer": "fabricante",
+"__tabla__": "Productos"
+}
+},
+"network_2": {
+"Person": {
+"name": "nombre",
+"age": "edad",
+"city": "ciudad",
+"gender": "género",
+"job": "trabajo",
+"__tabla__": "persona"
+},
+"PersonFriend": {
+"name": "nombre",
+"friend": "amigo",
+"year": "año",
+"__tabla__": "persona amiga"
+}
+},
+"local_govt_in_alabama": {
+"Services": {
+"Service_ID": "id de servicio",
+"Service_Type_Code": "código de tipo de servicio",
+"__tabla__": "servicios"
+},
+"Participants": {
+"Participant_ID": "id participante",
+"Participant_Type_Code": "código de tipo de participante",
+"Participant_Details": "Detalles del participante",
+"__tabla__": "participantes"
+},
+"Events": {
+"Event_ID": "event id",
+"Service_ID": "id de servicio",
+"Event_Details": "detalles del evento",
+"__tabla__": "Acontecimientos"
+},
+"Participants_in_Events": {
+"Event_ID": "event id",
+"Participant_ID": "id participante",
+"__tabla__": "participantes en los actos"
+}
+},
+"scientist_1": {
+"Scientists": {
+"SSN": "ssn",
+"Name": "nombre",
+"__tabla__": "científicos"
+},
+"Projects": {
+"Code": "código",
+"Name": "nombre",
+"Hours": "horas",
+"__tabla__": "proyectos"
+},
+"AssignedTo": {
+"Scientist": "científico",
+"Project": "proyecto",
+"__tabla__": "asignado a"
+}
+},
+"ship_1": {
+"captain": {
+"Captain_ID": "Capitán id",
+"Name": "nombre",
+"Ship_ID": "id de buque",
+"age": "edad",
+"Class": "clase",
+"Rank": "rango",
+"__tabla__": "Capitán"
+},
+"Ship": {
+"Ship_ID": "id de buque",
+"Name": "nombre",
+"Type": "tipo",
+"Built_Year": "Año de construcción",
+"Class": "clase",
+"Flag": "bandera",
+"__tabla__": "buque"
+}
+},
+"allergy_1": {
+"Allergy_Type": {
+"Allergy": "nombre de la alergia",
+"AllergyType": "tipo de alergia",
+"__tabla__": "tipo de alergia"
+},
+"Has_Allergy": {
+"StuID": "stuid",
+"Allergy": "alergia",
+"__tabla__": "tiene alergia"
+},
+"Student": {
+"StuID": "stuid",
+"LName": "apellido",
+"Fname": "nombre",
+"Age": "edad",
+"Sex": "Sexo",
+"Major": "mayor",
+"Advisor": "advisor",
+"city_code": "Código de la ciudad",
+"__tabla__": "estudiante"
+}
+},
+"imdb": {
+"actor": {
+"aid": "Ayudas",
+"gender": "género",
+"name": "nombre",
+"nationality": "nacionalidad",
+"birth_city": "ciudad de nacimiento",
+"birth_year": "Año de nacimiento",
+"__tabla__": "actor"
+},
+"copyright": {
+"id": "id",
+"msid": "msid",
+"cid": "cid",
+"__tabla__": "Derechos de autor"
+},
+"cast": {
+"id": "id",
+"msid": "msid",
+"aid": "Ayudas",
+"role": "función",
+"__tabla__": "yeso"
+},
+"genre": {
+"gid": "gid",
+"genre": "género",
+"__tabla__": "género"
+},
+"classification": {
+"id": "id",
+"msid": "msid",
+"gid": "gid",
+"__tabla__": "Clasificación"
+},
+"company": {
+"id": "id",
+"name": "nombre",
+"country_code": "Código del país",
+"__tabla__": "empresa"
+},
+"director": {
+"did": "lo hizo",
+"gender": "género",
+"name": "nombre",
+"nationality": "nacionalidad",
+"birth_city": "ciudad de nacimiento",
+"birth_year": "Año de nacimiento",
+"__tabla__": "director"
+},
+"producer": {
+"pid": "pid",
+"gender": "género",
+"name": "nombre",
+"nationality": "nacionalidad",
+"birth_city": "ciudad de nacimiento",
+"birth_year": "Año de nacimiento",
+"__tabla__": "productor"
+},
+"directed_by": {
+"id": "id",
+"msid": "msid",
+"did": "lo hizo",
+"__tabla__": "dirigida por"
+},
+"keyword": {
+"id": "id",
+"keyword": "palabra clave",
+"__tabla__": "palabra clave"
+},
+"made_by": {
+"id": "id",
+"msid": "msid",
+"pid": "pid",
+"__tabla__": "hecho por"
+},
+"movie": {
+"mid": "medio",
+"title": "Título",
+"release_year": "año de lanzamiento",
+"title_aka": "título aka",
+"budget": "Presupuesto",
+"__tabla__": "película"
+},
+"tags": {
+"id": "id",
+"msid": "msid",
+"kid": "niño",
+"__tabla__": "etiquetas"
+},
+"tv_series": {
+"sid": "sid",
+"title": "Título",
+"release_year": "año de lanzamiento",
+"num_of_seasons": "Número de estaciones",
+"num_of_episodes": "num de episodios",
+"title_aka": "título aka",
+"budget": "Presupuesto",
+"__tabla__": "Serie de televisión"
+},
+"writer": {
+"wid": "wid",
+"gender": "género",
+"name": "nombre",
+"nationality": "nacionalidad",
+"num_of_episodes": "num de episodios",
+"birth_city": "ciudad de nacimiento",
+"birth_year": "Año de nacimiento",
+"__tabla__": "escritor"
+},
+"written_by": {
+"id": "id",
+"msid": "msid",
+"wid": "wid",
+"__tabla__": "escrita por"
+}
+},
+"candidate_poll": {
+"candidate": {
+"Candidate_ID": "candidato id",
+"People_ID": "personas id",
+"Poll_Source": "fuente de la encuesta",
+"Date": "fecha",
+"Support_rate": "Tasa de apoyo",
+"Consider_rate": "tener en cuenta la tasa",
+"Oppose_rate": "oponte a la tasa",
+"Unsure_rate": "tasa insegura",
+"__tabla__": "candidato"
+},
+"people": {
+"People_ID": "personas id",
+"Sex": "Sexo",
+"Name": "nombre",
+"Date_of_Birth": "Fecha de nacimiento",
+"Height": "altura",
+"Weight": "peso",
+"__tabla__": "personas"
+}
+},
+"chinook_1": {
+"Album": {
+"AlbumId": "album id",
+"Title": "Título",
+"ArtistId": "artist id",
+"__tabla__": "álbum"
+},
+"Artist": {
+"ArtistId": "artist id",
+"Name": "nombre",
+"__tabla__": "artista"
+},
+"Customer": {
+"CustomerId": "id del cliente",
+"FirstName": "nombre",
+"LastName": "apellido",
+"Company": "empresa",
+"Address": "dirección",
+"City": "ciudad",
+"State": "estado",
+"Country": "país",
+"PostalCode": "Código postal",
+"Phone": "teléfono",
+"Fax": "fax",
+"Email": "correo electrónico",
+"SupportRepId": "id representante de apoyo",
+"__tabla__": "cliente"
+},
+"Employee": {
+"EmployeeId": "id de empleado",
+"LastName": "apellido",
+"FirstName": "nombre",
+"Title": "Título",
+"ReportsTo": "informes presentados a",
+"BirthDate": "fecha de nacimiento",
+"HireDate": "Fecha de alquiler",
+"Address": "dirección",
+"City": "ciudad",
+"State": "estado",
+"Country": "país",
+"PostalCode": "Código postal",
+"Phone": "teléfono",
+"Fax": "fax",
+"Email": "correo electrónico",
+"__tabla__": "Asalariado"
+},
+"Genre": {
+"GenreId": "genero id",
+"Name": "nombre",
+"__tabla__": "género"
+},
+"Invoice": {
+"InvoiceId": "id de factura",
+"CustomerId": "id del cliente",
+"InvoiceDate": "Fecha de la factura",
+"BillingAddress": "Dirección de facturación",
+"BillingCity": "ciudad de facturación",
+"BillingState": "Estado de facturación",
+"BillingCountry": "país de facturación",
+"BillingPostalCode": "Código postal de facturación",
+"Total": "Total",
+"__tabla__": "factura"
+},
+"InvoiceLine": {
+"InvoiceLineId": "id de la línea de factura",
+"InvoiceId": "id de factura",
+"TrackId": "id de pista",
+"UnitPrice": "Precio unitario",
+"Quantity": "cantidad",
+"__tabla__": "línea de la factura"
+},
+"MediaType": {
+"MediaTypeId": "Tipo de medio id",
+"Name": "nombre",
+"__tabla__": "Tipo de medio"
+},
+"Playlist": {
+"PlaylistId": "id de lista de reproducción",
+"Name": "nombre",
+"__tabla__": "lista de reproducción"
+},
+"PlaylistTrack": {
+"PlaylistId": "id de lista de reproducción",
+"TrackId": "id de pista",
+"__tabla__": "pista de lista de reproducción"
+},
+"Track": {
+"TrackId": "id de pista",
+"Name": "nombre",
+"AlbumId": "album id",
+"MediaTypeId": "Tipo de medio id",
+"GenreId": "genero id",
+"Composer": "compositor",
+"Milliseconds": "milisegundos",
+"Bytes": "bytes",
+"UnitPrice": "Precio unitario",
+"__tabla__": "pista"
+}
+},
+"flight_4": {
+"routes": {
+"rid": "id de ruta",
+"dst_apid": "airport id de destino",
+"dst_ap": "aeropuerto de destino",
+"src_apid": "id del aeropuerto de origen",
+"src_ap": "aeropuerto de origen",
+"alid": "id de línea aérea",
+"airline": "compañía aérea",
+"codeshare": "código compartido",
+"__tabla__": "rutas"
+},
+"airports": {
+"apid": "id del aeropuerto",
+"name": "nombre",
+"city": "ciudad",
+"country": "país",
+"x": "x",
+"y": "y",
+"elevation": "elevación",
+"iata": "iata",
+"icao": "icao",
+"__tabla__": "aeropuertos"
+},
+"airlines": {
+"alid": "id de línea aérea",
+"name": "nombre",
+"iata": "iata",
+"icao": "icao",
+"callsign": "signo de llamada",
+"country": "país",
+"active": "activo",
+"__tabla__": "compañías aéreas"
+}
+},
+"pets_1": {
+"Student": {
+"StuID": "id de estudiante",
+"LName": "apellido",
+"Fname": "nombre",
+"Age": "edad",
+"Sex": "Sexo",
+"Major": "mayor",
+"Advisor": "advisor",
+"city_code": "Código de la ciudad",
+"__tabla__": "estudiante"
+},
+"Has_Pet": {
+"StuID": "id de estudiante",
+"PetID": "identificación de la mascota",
+"__tabla__": "tiene mascota"
+},
+"Pets": {
+"PetID": "identificación de la mascota",
+"PetType": "Tipo de mascota",
+"pet_age": "Edad de la mascota",
+"weight": "peso",
+"__tabla__": "Animales de compañía"
+}
+},
+"medicine_enzyme_interaction": {
+"medicine": {
+"id": "id",
+"name": "nombre",
+"Trade_Name": "Denominación comercial",
+"FDA_approved": "fda aprobada",
+"__tabla__": "medicamentos"
+},
+"enzyme": {
+"id": "id",
+"name": "nombre",
+"Location": "ubicación",
+"Product": "producto",
+"Chromosome": "cromosoma",
+"OMIM": "omim",
+"Porphyria": "porfiria",
+"__tabla__": "enzima"
+},
+"medicine_enzyme_interaction": {
+"enzyme_id": "Enzima id",
+"medicine_id": "medicine id",
+"interaction_type": "tipo de interacción",
+"__tabla__": "Interacción enzimática con medicamentos"
+}
+},
+"driving_school": {
+"Addresses": {
+"address_id": "dirección id",
+"line_1_number_building": "construcción de la línea 1 número",
+"city": "ciudad",
+"zip_postcode": "código postal zip",
+"state_province_county": "provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia",
+"country": "país",
+"__tabla__": "direcciones"
+},
+"Staff": {
+"staff_id": "id de personal",
+"staff_address_id": "Dirección del personal id",
+"nickname": "nickname",
+"first_name": "nombre",
+"middle_name": "segundo nombre",
+"last_name": "apellido",
+"date_of_birth": "Fecha de nacimiento",
+"date_joined_staff": "fecha de incorporación del personal",
+"date_left_staff": "fecha de salida del personal",
+"__tabla__": "Personal"
+},
+"Vehicles": {
+"vehicle_id": "identificación del vehículo",
+"vehicle_details": "Detalles del vehículo",
+"__tabla__": "vehículos"
+},
+"Customers": {
+"customer_id": "id del cliente",
+"customer_address_id": "dirección del cliente id",
+"customer_status_code": "código de estado del cliente",
+"date_became_customer": "fecha se convirtió en cliente",
+"date_of_birth": "Fecha de nacimiento",
+"first_name": "nombre",
+"last_name": "apellido",
+"amount_outstanding": "Suma pendiente de pago",
+"email_address": "dirección de correo electrónico",
+"phone_number": "número de teléfono",
+"cell_mobile_phone_number": "número de teléfono móvil celular",
+"__tabla__": "clientes"
+},
+"Customer_Payments": {
+"customer_id": "id del cliente",
+"datetime_payment": "pago a la hora de la fecha",
+"payment_method_code": "Código del método de pago",
+"amount_payment": "pago de la cantidad",
+"__tabla__": "Pagos a los clientes"
+},
+"Lessons": {
+"lesson_id": "id de la lección",
+"customer_id": "id del cliente",
+"lesson_status_code": "Código de estado de la lección",
+"staff_id": "id de personal",
+"vehicle_id": "identificación del vehículo",
+"lesson_date": "Fecha de la lección",
+"lesson_time": "Tiempo de lección",
+"price": "precio",
+"__tabla__": "lecciones"
+}
+},
+"concert_singer": {
+"stadium": {
+"Stadium_ID": "id del estadio",
+"Location": "ubicación",
+"Name": "nombre",
+"Capacity": "capacidad",
+"Highest": "más alto",
+"Lowest": "más bajo",
+"Average": "promedio",
+"__tabla__": "estadio"
+},
+"singer": {
+"Singer_ID": "cantante id",
+"Name": "nombre",
+"Country": "país",
+"Song_Name": "nombre de la canción",
+"Song_release_year": "Año de lanzamiento de la canción",
+"Age": "edad",
+"Is_male": "es macho",
+"__tabla__": "cantante"
+},
+"concert": {
+"concert_ID": "Concert id",
+"concert_Name": "nombre del concierto",
+"Theme": "Tema",
+"Stadium_ID": "id del estadio",
+"Year": "año",
+"__tabla__": "concierto"
+},
+"singer_in_concert": {
+"concert_ID": "Concert id",
+"Singer_ID": "cantante id",
+"__tabla__": "cantante en concierto"
+}
+},
+"music_2": {
+"Songs": {
+"SongId": "id de canción",
+"Title": "Título",
+"__tabla__": "canciones"
+},
+"Albums": {
+"AId": "Ayudas",
+"Title": "Título",
+"Year": "año",
+"Label": "etiqueta",
+"Type": "tipo",
+"__tabla__": "álbumes"
+},
+"Band": {
+"Id": "id",
+"Firstname": "nombre",
+"Lastname": "apellido",
+"__tabla__": "banda"
+},
+"Instruments": {
+"SongId": "id de canción",
+"BandmateId": "id de compañero de banda",
+"Instrument": "instrumento",
+"__tabla__": "instrumentos"
+},
+"Performance": {
+"SongId": "id de canción",
+"Bandmate": "bandymate",
+"StagePosition": "posición de la etapa",
+"__tabla__": "rendimiento"
+},
+"Tracklists": {
+"AlbumId": "album id",
+"Position": "posición",
+"SongId": "id de canción",
+"__tabla__": "listas de pistas"
+},
+"Vocals": {
+"SongId": "id de canción",
+"Bandmate": "bandymate",
+"Type": "tipo",
+"__tabla__": "vocales"
+}
+},
+"sports_competition": {
+"club": {
+"Club_ID": "club id",
+"name": "nombre",
+"Region": "región",
+"Start_year": "Año de inicio",
+"__tabla__": "club"
+},
+"club_rank": {
+"Rank": "rango",
+"Club_ID": "club id",
+"Gold": "oro",
+"Silver": "plata",
+"Bronze": "bronce",
+"Total": "Total",
+"__tabla__": "rango de club"
+},
+"player": {
+"Player_ID": "id de jugador",
+"name": "nombre",
+"Position": "posición",
+"Club_ID": "club id",
+"Apps": "aplicaciones",
+"Tries": "intenta",
+"Goals": "objetivos",
+"Points": "puntos",
+"__tabla__": "jugador"
+},
+"competition": {
+"Competition_ID": "competition id",
+"Year": "año",
+"Competition_type": "tipo de competencia",
+"Country": "país",
+"__tabla__": "competencia"
+},
+"competition_result": {
+"Competition_ID": "competition id",
+"Club_ID_1": "club id 1",
+"Club_ID_2": "club id 2",
+"Score": "puntuación",
+"__tabla__": "resultado de la competencia"
+}
+},
+"railway": {
+"railway": {
+"Railway_ID": "id de ferrocarril",
+"Railway": "ferrocarril",
+"Builder": "constructor",
+"Built": "construido",
+"Wheels": "ruedas",
+"Location": "ubicación",
+"ObjectNumber": "número de objeto",
+"__tabla__": "ferrocarril"
+},
+"train": {
+"Train_ID": "id de tren",
+"Train_Num": "tren num",
+"Name": "nombre",
+"From": "desde",
+"Arrival": "llegada",
+"Railway_ID": "id de ferrocarril",
+"__tabla__": "tren"
+},
+"manager": {
+"Manager_ID": "manager id",
+"Name": "nombre",
+"Country": "país",
+"Working_year_starts": "Comienza el año de trabajo",
+"Age": "edad",
+"Level": "nivel",
+"__tabla__": "manager"
+},
+"railway_manage": {
+"Railway_ID": "id de ferrocarril",
+"Manager_ID": "manager id",
+"From_Year": "A partir del año",
+"__tabla__": "gestión ferroviaria"
+}
+},
+"inn_1": {
+"Rooms": {
+"RoomId": "id de la habitación",
+"roomName": "nombre de la habitación",
+"beds": "camas",
+"bedType": "tipo de cama",
+"maxOccupancy": "Ocupación máxima",
+"basePrice": "Precio base",
+"decor": "decoración",
+"__tabla__": "habitaciones"
+},
+"Reservations": {
+"Code": "código",
+"Room": "habitación",
+"CheckIn": "check-in",
+"CheckOut": "eche un vistazo",
+"Rate": "Tasa",
+"LastName": "apellido",
+"FirstName": "nombre",
+"Adults": "adultos",
+"Kids": "niños",
+"__tabla__": "reservas"
+}
+},
+"architecture": {
+"architect": {
+"id": "id",
+"name": "nombre",
+"nationality": "nacionalidad",
+"gender": "género",
+"__tabla__": "arquitecto"
+},
+"bridge": {
+"architect_id": "arquitecto id",
+"id": "id",
+"name": "nombre",
+"location": "ubicación",
+"length_meters": "metros de longitud",
+"length_feet": "Pies largos",
+"__tabla__": "puente"
+},
+"mill": {
+"architect_id": "arquitecto id",
+"id": "id",
+"location": "ubicación",
+"name": "nombre",
+"type": "tipo",
+"built_year": "Año de construcción",
+"notes": "notas",
+"__tabla__": "molino"
+}
+},
+"csu_1": {
+"Campuses": {
+"Id": "id",
+"Campus": "campus",
+"Location": "ubicación",
+"County": "condado",
+"Year": "año",
+"__tabla__": "campus"
+},
+"csu_fees": {
+"Campus": "campus",
+"Year": "año",
+"CampusFee": "Tasa del campus",
+"__tabla__": "Tasas csu"
+},
+"degrees": {
+"Year": "año",
+"Campus": "campus",
+"Degrees": "grados",
+"__tabla__": "grados"
+},
+"discipline_enrollments": {
+"Campus": "campus",
+"Discipline": "disciplina",
+"Year": "año",
+"Undergraduate": "pregrado",
+"Graduate": "graduado",
+"__tabla__": "Inscripción disciplinaria"
+},
+"enrollments": {
+"Campus": "campus",
+"Year": "año",
+"TotalEnrollment_AY": "totalinscripción ay",
+"FTE_AY": "Fte ay",
+"__tabla__": "Inscripciones"
+},
+"faculty": {
+"Campus": "campus",
+"Year": "año",
+"Faculty": "Facultad",
+"__tabla__": "Facultad"
+}
+},
+"insurance_policies": {
+"Customers": {
+"Customer_ID": "id del cliente",
+"Customer_Details": "detalles del cliente",
+"__tabla__": "clientes"
+},
+"Customer_Policies": {
+"Policy_ID": "policy id",
+"Customer_ID": "id del cliente",
+"Policy_Type_Code": "código de tipo de política",
+"Start_Date": "fecha de inicio",
+"End_Date": "fecha de finalización",
+"__tabla__": "políticas de los clientes"
+},
+"Claims": {
+"Claim_ID": "id de reclamación",
+"Policy_ID": "policy id",
+"Date_Claim_Made": "Fecha de la reclamación",
+"Date_Claim_Settled": "fecha de liquidación de la reclamación",
+"Amount_Claimed": "Cantidad reclamada",
+"Amount_Settled": "Importe liquidado",
+"__tabla__": "reclamaciones"
+},
+"Settlements": {
+"Settlement_ID": "id de liquidación",
+"Claim_ID": "id de reclamación",
+"Date_Claim_Made": "Fecha de la reclamación",
+"Date_Claim_Settled": "fecha de liquidación de la reclamación",
+"Amount_Claimed": "Cantidad reclamada",
+"Amount_Settled": "Importe liquidado",
+"Customer_Policy_ID": "Política del cliente id",
+"__tabla__": "asentamientos"
+},
+"Payments": {
+"Payment_ID": "id de pago",
+"Settlement_ID": "id de liquidación",
+"Payment_Method_Code": "Código del método de pago",
+"Date_Payment_Made": "fecha en que se efectuó el pago",
+"Amount_Payment": "pago de la cantidad",
+"__tabla__": "Pagos"
+}
+},
+"gas_company": {
+"company": {
+"Company_ID": "id de la empresa",
+"Rank": "rango",
+"Company": "empresa",
+"Headquarters": "cuartel general",
+"Main_Industry": "industria principal",
+"Sales_billion": "ventas en miles de millones",
+"Profits_billion": "beneficios en miles de millones",
+"Assets_billion": "activos en miles de millones",
+"Market_Value": "valor de mercado",
+"__tabla__": "empresa"
+},
+"gas_station": {
+"Station_ID": "id de la estación",
+"Open_Year": "Año de apertura",
+"Location": "ubicación",
+"Manager_Name": "nombre del administrador",
+"Vice_Manager_Name": "nombre del vice-gerente",
+"Representative_Name": "nombre del representante",
+"__tabla__": "estación de servicio"
+},
+"station_company": {
+"Station_ID": "id de la estación",
+"Company_ID": "id de la empresa",
+"Rank_of_the_Year": "rango del año",
+"__tabla__": "empresa de estaciones"
+}
+},
+"e_government": {
+"Addresses": {
+"address_id": "dirección id",
+"line_1_number_building": "construcción de la línea 1 número",
+"town_city": "ciudad",
+"zip_postcode": "código postal zip",
+"state_province_county": "provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia",
+"country": "país",
+"__tabla__": "direcciones"
+},
+"Services": {
+"service_id": "id de servicio",
+"service_type_code": "código de tipo de servicio",
+"service_name": "nombre de servicio",
+"service_descriptio": "service descriptio",
+"__tabla__": "servicios"
+},
+"Forms": {
+"form_id": "id de formulario",
+"form_type_code": "código de tipo de formulario",
+"service_id": "id de servicio",
+"form_number": "número de formulario",
+"form_name": "nombre del formulario",
+"form_description": "Descripción del formulario",
+"__tabla__": "formularios"
+},
+"Individuals": {
+"individual_id": "id individual",
+"individual_first_name": "nombre individual",
+"individual_middle_name": "nombre de segundo orden individual",
+"inidividual_phone": "Teléfono individual",
+"individual_email": "correo electrónico individual",
+"individual_address": "dirección individual",
+"individual_last_name": "apellido individual",
+"__tabla__": "personas físicas"
+},
+"Organizations": {
+"organization_id": "id de organización",
+"date_formed": "fecha de constitución",
+"organization_name": "nombre de la organización",
+"uk_vat_number": "uk cut number",
+"__tabla__": "organizaciones no gubernamentales"
+},
+"Parties": {
+"party_id": "party id",
+"payment_method_code": "Código del método de pago",
+"party_phone": "Teléfono de la fiesta",
+"party_email": "correo electrónico del partido",
+"__tabla__": "partes"
+},
+"Organization_Contact_Individuals": {
+"individual_id": "id individual",
+"organization_id": "id de organización",
+"date_contact_from": "fecha de contacto desde",
+"date_contact_to": "fecha de contacto a",
+"__tabla__": "contacto de la organización individuos"
+},
+"Party_Addresses": {
+"party_id": "party id",
+"address_id": "dirección id",
+"date_address_from": "dirección de la fecha de",
+"address_type_code": "código de tipo de dirección",
+"date_address_to": "dirección de fecha a",
+"__tabla__": "direcciones de las partes"
+},
+"Party_Forms": {
+"party_id": "party id",
+"form_id": "id de formulario",
+"date_completion_started": "Fecha en que se inició la finalización",
+"form_status_code": "código de estado de formulario",
+"date_fully_completed": "Fecha de finalización completa",
+"__tabla__": "Formularios de las partes"
+},
+"Party_Services": {
+"booking_id": "id de reserva",
+"customer_id": "id del cliente",
+"service_id": "id de servicio",
+"service_datetime": "hora de la fecha de servicio",
+"booking_made_date": "fecha de la reserva",
+"__tabla__": "servicios de fiestas"
+}
+},
+"school_bus": {
+"driver": {
+"Driver_ID": "id de controlador",
+"Name": "nombre",
+"Party": "Parte",
+"Home_city": "ciudad natal",
+"Age": "edad",
+"__tabla__": "controlador"
+},
+"school": {
+"School_ID": "id de la escuela",
+"Grade": "grado",
+"School": "escuela",
+"Location": "ubicación",
+"Type": "tipo",
+"__tabla__": "escuela"
+},
+"school_bus": {
+"School_ID": "id de la escuela",
+"Driver_ID": "id de controlador",
+"Years_Working": "años de trabajo",
+"If_full_time": "si a tiempo completo",
+"__tabla__": "autobús escolar"
+}
+},
+"machine_repair": {
+"repair": {
+"repair_ID": "id de reparación",
+"name": "nombre",
+"Launch_Date": "fecha de lanzamiento",
+"Notes": "notas",
+"__tabla__": "reparación"
+},
+"machine": {
+"Machine_ID": "id de máquina",
+"Making_Year": "año de fabricación",
+"Class": "clase",
+"Team": "equipo",
+"Machine_series": "serie de máquinas",
+"value_points": "puntos de valor",
+"quality_rank": "rango de calidad",
+"__tabla__": "máquina"
+},
+"technician": {
+"technician_id": "id técnico",
+"Name": "nombre",
+"Team": "equipo",
+"Starting_Year": "Año de inicio",
+"Age": "edad",
+"__tabla__": "técnico"
+},
+"repair_assignment": {
+"technician_id": "id técnico",
+"repair_ID": "id de reparación",
+"Machine_ID": "id de máquina",
+"__tabla__": "asignación de reparaciones"
+}
+},
+"theme_gallery": {
+"artist": {
+"Artist_ID": "artist id",
+"Name": "nombre",
+"Country": "país",
+"Year_Join": "año de incorporación",
+"Age": "edad",
+"__tabla__": "artista"
+},
+"exhibition": {
+"Exhibition_ID": "exhibition id",
+"Year": "año",
+"Theme": "Tema",
+"Artist_ID": "artist id",
+"Ticket_Price": "precio del billete",
+"__tabla__": "exposición"
+},
+"exhibition_record": {
+"Exhibition_ID": "exhibition id",
+"Date": "fecha",
+"Attendance": "Asistencia",
+"__tabla__": "registro de la exposición"
+}
+},
+"film_rank": {
+"film": {
+"Film_ID": "id de película",
+"Title": "Título",
+"Studio": "estudio",
+"Director": "director",
+"Gross_in_dollar": "bruto en dólares",
+"__tabla__": "película"
+},
+"market": {
+"Market_ID": "id de mercado",
+"Country": "país",
+"Number_cities": "número de ciudades",
+"__tabla__": "mercado"
+},
+"film_market_estimation": {
+"Estimation_ID": "id de estimación",
+"Low_Estimate": "estimación baja",
+"High_Estimate": "estimación elevada",
+"Film_ID": "id de película",
+"Type": "tipo",
+"Market_ID": "id de mercado",
+"Year": "año",
+"__tabla__": "Estimación del mercado de películas"
+}
+},
+"party_people": {
+"region": {
+"Region_ID": "región id",
+"Region_name": "nombre de la región",
+"Date": "fecha",
+"Label": "etiqueta",
+"Format": "formato",
+"Catalogue": "catálogo",
+"__tabla__": "región"
+},
+"party": {
+"Party_ID": "party id",
+"Minister": "ministro",
+"Took_office": "asumió el cargo",
+"Left_office": "izquierda de la oficina",
+"Region_ID": "región id",
+"Party_name": "nombre del partido",
+"__tabla__": "Parte"
+},
+"member": {
+"Member_ID": "miembro id",
+"Member_Name": "nombre del miembro",
+"Party_ID": "party id",
+"In_office": "en el cargo",
+"__tabla__": "miembro"
+},
+"party_events": {
+"Event_ID": "event id",
+"Event_Name": "nombre del evento",
+"Party_ID": "party id",
+"Member_in_charge_ID": "miembro a cargo id",
+"__tabla__": "actos de fiesta"
+}
+},
+"hospital_1": {
+"Physician": {
+"EmployeeID": "id de empleado",
+"Name": "nombre",
+"Position": "posición",
+"SSN": "ssn",
+"__tabla__": "médico"
+},
+"Department": {
+"DepartmentID": "departmentid",
+"Name": "nombre",
+"Head": "cabeza",
+"__tabla__": "departamento"
+},
+"Affiliated_With": {
+"Physician": "médico",
+"Department": "departamento",
+"PrimaryAffiliation": "Afiliación primaria",
+"__tabla__": "afiliada a"
+},
+"Procedures": {
+"Code": "código",
+"Name": "nombre",
+"Cost": "Costo",
+"__tabla__": "procedimientos"
+},
+"Trained_In": {
+"Physician": "médico",
+"Treatment": "tratamiento",
+"CertificationDate": "Fecha de certificación",
+"CertificationExpires": "la certificación expira",
+"__tabla__": "en el que se capacitó a"
+},
+"Patient": {
+"SSN": "ssn",
+"Name": "nombre",
+"Address": "dirección",
+"Phone": "teléfono",
+"InsuranceID": "id de seguro",
+"PCP": "pcp",
+"__tabla__": "paciente"
+},
+"Nurse": {
+"EmployeeID": "id de empleado",
+"Name": "nombre",
+"Position": "posición",
+"Registered": "registrado",
+"SSN": "ssn",
+"__tabla__": "enfermera"
+},
+"Appointment": {
+"AppointmentID": "id de nombramiento",
+"Patient": "paciente",
+"PrepNurse": "enfermera de preparación",
+"Physician": "médico",
+"Start": "iniciar",
+"End": "fin",
+"ExaminationRoom": "sala de examen",
+"__tabla__": "nombramiento"
+},
+"Medication": {
+"Code": "código",
+"Name": "nombre",
+"Brand": "marca",
+"Description": "Descripción",
+"__tabla__": "medicamentos"
+},
+"Prescribes": {
+"Physician": "médico",
+"Patient": "paciente",
+"Medication": "medicamentos",
+"Date": "fecha",
+"Appointment": "nombramiento",
+"Dose": "dosis",
+"__tabla__": "prescribe"
+},
+"Block": {
+"BlockFloor": "piso de bloque",
+"BlockCode": "código de bloque",
+"__tabla__": "bloque"
+},
+"Room": {
+"RoomNumber": "número de habitación",
+"RoomType": "Tipo de habitación",
+"BlockFloor": "piso de bloque",
+"BlockCode": "código de bloque",
+"Unavailable": "no disponible",
+"__tabla__": "habitación"
+},
+"On_Call": {
+"Nurse": "enfermera",
+"BlockFloor": "piso de bloque",
+"BlockCode": "código de bloque",
+"OnCallStart": "inicio de la llamada",
+"OnCallEnd": "al final de la llamada",
+"__tabla__": "de guardia"
+},
+"Stay": {
+"StayID": "Permanecer id",
+"Patient": "paciente",
+"Room": "habitación",
+"StayStart": "mantener el inicio",
+"StayEnd": "Permanecer en el final",
+"__tabla__": "Quédate"
+},
+"Undergoes": {
+"Patient": "paciente",
+"Procedures": "procedimientos",
+"Stay": "Quédate",
+"DateUndergoes": "fecha a la que se somete",
+"Physician": "médico",
+"AssistingNurse": "auxiliar de enfermería",
+"__tabla__": "se somete a"
+}
+},
+"cre_Doc_Control_Systems": {
+"Ref_Document_Types": {
+"document_type_code": "código de tipo de documento",
+"document_type_description": "Descripción del tipo de documento",
+"__tabla__": "tipos de documentos de referencia"
+},
+"Roles": {
+"role_code": "código de rol",
+"role_description": "Descripción de las funciones",
+"__tabla__": "funciones"
+},
+"Addresses": {
+"address_id": "dirección id",
+"address_details": "detalles de la dirección",
+"__tabla__": "direcciones"
+},
+"Ref_Document_Status": {
+"document_status_code": "código de estado del documento",
+"document_status_description": "descripción del estado del documento",
+"__tabla__": "Estado del documento de referencia"
+},
+"Ref_Shipping_Agents": {
+"shipping_agent_code": "Código del agente de transporte",
+"shipping_agent_name": "nombre del agente de envío",
+"shipping_agent_description": "Descripción del agente de transporte",
+"__tabla__": "agentes de expedición de referencia"
+},
+"Documents": {
+"document_id": "documento id",
+"document_status_code": "código de estado del documento",
+"document_type_code": "código de tipo de documento",
+"shipping_agent_code": "Código del agente de transporte",
+"receipt_date": "fecha de recepción",
+"receipt_number": "Número de recibo",
+"other_details": "otros detalles",
+"__tabla__": "documentos"
+},
+"Employees": {
+"employee_id": "id de empleado",
+"role_code": "código de rol",
+"employee_name": "nombre del empleado",
+"other_details": "otros detalles",
+"__tabla__": "empleados"
+},
+"Document_Drafts": {
+"document_id": "documento id",
+"draft_number": "número de borrador",
+"draft_details": "Proyecto de detalles",
+"__tabla__": "borradores de documentos"
+},
+"Draft_Copies": {
+"document_id": "documento id",
+"draft_number": "número de borrador",
+"copy_number": "número de copia",
+"__tabla__": "borradores de ejemplares"
+},
+"Circulation_History": {
+"document_id": "documento id",
+"draft_number": "número de borrador",
+"copy_number": "número de copia",
+"employee_id": "id de empleado",
+"__tabla__": "historia de circulación"
+},
+"Documents_Mailed": {
+"document_id": "documento id",
+"mailed_to_address_id": "enviado por correo a la dirección id",
+"mailing_date": "Fecha de envío",
+"__tabla__": "documentos enviados por correo"
+}
+},
+"tracking_share_transactions": {
+"Investors": {
+"investor_id": "id inversionista",
+"Investor_details": "detalles del inversor",
+"__tabla__": "inversores"
+},
+"Lots": {
+"lot_id": "lote id",
+"investor_id": "id inversionista",
+"lot_details": "Detalles del lote",
+"__tabla__": "lotes"
+},
+"Ref_Transaction_Types": {
+"transaction_type_code": "código de tipo de transacción",
+"transaction_type_description": "Descripción del tipo de transacción",
+"__tabla__": "tipos de transacción de referencia"
+},
+"Transactions": {
+"transaction_id": "id de transacción",
+"investor_id": "id inversionista",
+"transaction_type_code": "código de tipo de transacción",
+"date_of_transaction": "Fecha de la transacción",
+"amount_of_transaction": "importe de la transacción",
+"share_count": "cuenta de acciones",
+"other_details": "otros detalles",
+"__tabla__": "transacciones"
+},
+"Sales": {
+"sales_transaction_id": "id de transacción de ventas",
+"sales_details": "Detalles de ventas",
+"__tabla__": "ventas"
+},
+"Purchases": {
+"purchase_transaction_id": "id de transacción de compra",
+"purchase_details": "detalles de la compra",
+"__tabla__": "compras"
+},
+"Transactions_Lots": {
+"transaction_id": "id de transacción",
+"lot_id": "lote id",
+"__tabla__": "lotes de transacciones"
+}
+},
+"apartment_rentals": {
+"Apartment_Buildings": {
+"building_id": "id de construcción",
+"building_short_name": "construcción de nombre abreviado",
+"building_full_name": "nombre completo del edificio",
+"building_description": "Descripción del edificio",
+"building_address": "dirección del edificio",
+"building_manager": "administrador de edificios",
+"building_phone": "Teléfono de construcción",
+"__tabla__": "edificios de apartamentos"
+},
+"Apartments": {
+"apt_id": "apartment id",
+"building_id": "id de construcción",
+"apt_type_code": "Código del tipo de apartamento",
+"apt_number": "número de apartamento",
+"bathroom_count": "recuento de baños",
+"bedroom_count": "recuento de dormitorios",
+"room_count": "conteo de habitaciones",
+"__tabla__": "apartamentos"
+},
+"Apartment_Facilities": {
+"apt_id": "apartment id",
+"facility_code": "código de la instalación",
+"__tabla__": "instalaciones de apartamentos"
+},
+"Guests": {
+"guest_id": "id de invitado",
+"gender_code": "Código de género",
+"guest_first_name": "nombre de invitado",
+"guest_last_name": "apellido del invitado",
+"date_of_birth": "Fecha de nacimiento",
+"__tabla__": "invitados"
+},
+"Apartment_Bookings": {
+"apt_booking_id": "id de reserva de apartamento",
+"apt_id": "apartment id",
+"guest_id": "id de invitado",
+"booking_status_code": "código de estado de la reserva",
+"booking_start_date": "Fecha de inicio de la reserva",
+"booking_end_date": "fecha de finalización de la reserva",
+"__tabla__": "reservas de apartamentos"
+},
+"View_Unit_Status": {
+"apt_id": "apartment id",
+"apt_booking_id": "id de reserva de apartamento",
+"status_date": "fecha de la situación",
+"available_yn": "disponible sí o no",
+"__tabla__": "ver el estado de la unidad"
+}
+},
+"student_transcripts_tracking": {
+"Addresses": {
+"address_id": "dirección id",
+"line_1": "línea 1",
+"line_2": "línea 2",
+"line_3": "línea 3",
+"city": "ciudad",
+"zip_postcode": "código postal zip",
+"state_province_county": "provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia",
+"country": "país",
+"other_address_details": "otros detalles de la dirección",
+"__tabla__": "direcciones"
+},
+"Courses": {
+"course_id": "id de curso",
+"course_name": "nombre del curso",
+"course_description": "Descripción del curso",
+"other_details": "otros detalles",
+"__tabla__": "cursos"
+},
+"Departments": {
+"department_id": "department id",
+"department_name": "nombre del departamento",
+"department_description": "descripción del departamento",
+"other_details": "otros detalles",
+"__tabla__": "Departamentos"
+},
+"Degree_Programs": {
+"degree_program_id": "id del programa de grado",
+"department_id": "department id",
+"degree_summary_name": "nombre del resumen de grado",
+"degree_summary_description": "descripción resumida del grado",
+"other_details": "otros detalles",
+"__tabla__": "programas de grado"
+},
+"Sections": {
+"section_id": "sección id",
+"course_id": "id de curso",
+"section_name": "nombre de la sección",
+"section_description": "descripción de la sección",
+"other_details": "otros detalles",
+"__tabla__": "secciones"
+},
+"Semesters": {
+"semester_id": "id semestre",
+"semester_name": "nombre del semestre",
+"semester_description": "Descripción del semestre",
+"other_details": "otros detalles",
+"__tabla__": "semestres"
+},
+"Students": {
+"student_id": "id de estudiante",
+"current_address_id": "id de dirección actual",
+"permanent_address_id": "Dirección permanente id",
+"first_name": "nombre",
+"middle_name": "segundo nombre",
+"last_name": "apellido",
+"cell_mobile_number": "número de móvil celular",
+"email_address": "dirección de correo electrónico",
+"ssn": "ssn",
+"date_first_registered": "fecha de inscripción por primera vez",
+"date_left": "fecha de salida",
+"other_student_details": "otros detalles del estudiante",
+"__tabla__": "estudiantes"
+},
+"Student_Enrolment": {
+"student_enrolment_id": "id de matrícula de los estudiantes",
+"degree_program_id": "id del programa de grado",
+"semester_id": "id semestre",
+"student_id": "id de estudiante",
+"other_details": "otros detalles",
+"__tabla__": "Matrícula de estudiantes"
+},
+"Student_Enrolment_Courses": {
+"student_course_id": "id del curso de estudiante",
+"course_id": "id de curso",
+"student_enrolment_id": "id de matrícula de los estudiantes",
+"__tabla__": "Cursos de matriculación de estudiantes"
+},
+"Transcripts": {
+"transcript_id": "transcript id",
+"transcript_date": "Fecha de la transcripción",
+"other_details": "otros detalles",
+"__tabla__": "transcripciones"
+},
+"Transcript_Contents": {
+"student_course_id": "id del curso de estudiante",
+"transcript_id": "transcript id",
+"__tabla__": "contenido de la transcripción"
+}
+},
+"customers_card_transactions": {
+"Accounts": {
+"account_id": "id de cuenta",
+"customer_id": "id del cliente",
+"account_name": "nombre de la cuenta",
+"other_account_details": "otros detalles de la cuenta",
+"__tabla__": "cuentas"
+},
+"Customers": {
+"customer_id": "id del cliente",
+"customer_first_name": "nombre del cliente",
+"customer_last_name": "apellido del cliente",
+"customer_address": "dirección del cliente",
+"customer_phone": "teléfono del cliente",
+"customer_email": "correo electrónico del cliente",
+"other_customer_details": "otros datos del cliente",
+"__tabla__": "clientes"
+},
+"Customers_Cards": {
+"card_id": "id de tarjeta",
+"customer_id": "id del cliente",
+"card_type_code": "código de tipo de tarjeta",
+"card_number": "número de tarjeta",
+"date_valid_from": "fecha válida desde",
+"date_valid_to": "fecha válida para",
+"other_card_details": "otros datos de la tarjeta",
+"__tabla__": "tarjetas de clientes"
+},
+"Financial_Transactions": {
+"transaction_id": "id de transacción",
+"previous_transaction_id": "id de transacción anterior",
+"account_id": "id de cuenta",
+"card_id": "id de tarjeta",
+"transaction_type": "Tipo de transacción",
+"transaction_date": "fecha de transacción",
+"transaction_amount": "importe de la transacción",
+"transaction_comment": "comentario sobre la transacción",
+"other_transaction_details": "otros detalles de la transacción",
+"__tabla__": "transacciones financieras"
+}
+},
+"singer": {
+"singer": {
+"Singer_ID": "cantante id",
+"Name": "nombre",
+"Birth_Year": "Año de nacimiento",
+"Net_Worth_Millions": "valor neto en millones",
+"Citizenship": "ciudadanía",
+"__tabla__": "cantante"
+},
+"song": {
+"Song_ID": "id de canción",
+"Title": "Título",
+"Singer_ID": "cantante id",
+"Sales": "ventas",
+"Highest_Position": "posición más alta",
+"__tabla__": "canción"
+}
+},
+"cre_Doc_Template_Mgt": {
+"Ref_Template_Types": {
+"Template_Type_Code": "código de tipo de plantilla",
+"Template_Type_Description": "Descripción del tipo de plantilla",
+"__tabla__": "tipos de plantilla de referencia"
+},
+"Templates": {
+"Template_ID": "plantilla id",
+"Version_Number": "Número de versión",
+"Template_Type_Code": "código de tipo de plantilla",
+"Date_Effective_From": "fecha de entrada en vigor a partir de",
+"Date_Effective_To": "fecha de entrada en vigor",
+"Template_Details": "detalles de la plantilla",
+"__tabla__": "plantillas"
+},
+"Documents": {
+"Document_ID": "documento id",
+"Template_ID": "plantilla id",
+"Document_Name": "nombre del documento",
+"Document_Description": "descripción del documento",
+"Other_Details": "otros detalles",
+"__tabla__": "documentos"
+},
+"Paragraphs": {
+"Paragraph_ID": "párrafo id",
+"Document_ID": "documento id",
+"Paragraph_Text": "texto del párrafo",
+"Other_Details": "otros detalles",
+"__tabla__": "Párrafos"
+}
+},
+"world_1": {
+"city": {
+"ID": "id",
+"Name": "nombre",
+"CountryCode": "Código del país",
+"District": "distrito",
+"Population": "Población",
+"__tabla__": "ciudad"
+},
+"sqlite_sequence": {
+"name": "nombre",
+"seq": "ss",
+"__tabla__": "secuencia sqlite"
+},
+"country": {
+"Code": "código",
+"Name": "nombre",
+"Continent": "continente",
+"Region": "región",
+"SurfaceArea": "superficie",
+"IndepYear": "año independiente",
+"Population": "Población",
+"LifeExpectancy": "esperanza de vida",
+"GNP": "gnp",
+"GNPOld": "gnp old",
+"LocalName": "nombre local",
+"GovernmentForm": "forma de gobierno",
+"HeadOfState": "Jefe de Estado",
+"Capital": "capital",
+"Code2": "código 2",
+"__tabla__": "país"
+},
+"countrylanguage": {
+"CountryCode": "código del país",
+"Language": "idioma",
+"IsOfficial": "es oficial",
+"Percentage": "Porcentaje",
+"__tabla__": "idioma del país"
+}
+},
+"movie_1": {
+"Movie": {
+"mID": "id de película",
+"title": "Título",
+"year": "año",
+"director": "director",
+"__tabla__": "película"
+},
+"Reviewer": {
+"rID": "revisor id",
+"name": "nombre",
+"__tabla__": "revisor"
+},
+"Rating": {
+"rID": "revisor id",
+"mID": "id de película",
+"stars": "Estrellas de clasificación",
+"ratingDate": "Fecha de calificación",
+"__tabla__": "calificación"
+}
+},
+"network_1": {
+"Highschooler": {
+"ID": "id",
+"name": "nombre",
+"grade": "grado",
+"__tabla__": "estudiante de secundaria"
+},
+"Friend": {
+"student_id": "id de estudiante",
+"friend_id": "id de amigo",
+"__tabla__": "amigo"
+},
+"Likes": {
+"student_id": "id de estudiante",
+"liked_id": "id me gusta",
+"__tabla__": "le gusta"
+}
+},
+"aircraft": {
+"pilot": {
+"Pilot_Id": "id piloto",
+"Name": "nombre",
+"Age": "edad",
+"__tabla__": "piloto"
+},
+"aircraft": {
+"Aircraft_ID": "id de aeronave",
+"Aircraft": "aeronaves",
+"Description": "Descripción",
+"Max_Gross_Weight": "Peso bruto máximo",
+"Total_disk_area": "área total del disco",
+"Max_disk_Loading": "Carga máxima de disco",
+"__tabla__": "aeronaves"
+},
+"match": {
+"Round": "redonda",
+"Location": "ubicación",
+"Country": "país",
+"Date": "fecha",
+"Fastest_Qualifying": "clasificación más rápida",
+"Winning_Pilot": "piloto ganador",
+"Winning_Aircraft": "Aviones ganadores",
+"__tabla__": "igualar"
+},
+"airport": {
+"Airport_ID": "id del aeropuerto",
+"Airport_Name": "nombre del aeropuerto",
+"Total_Passengers": "Total de pasajeros",
+"%_Change_2007": "Porcentaje de variación 2007",
+"International_Passengers": "pasajeros internacionales",
+"Domestic_Passengers": "pasajeros domésticos",
+"Transit_Passengers": "pasajeros de tránsito",
+"Aircraft_Movements": "movimientos de aeronaves",
+"Freight_Metric_Tonnes": "toneladas métricas de flete",
+"__tabla__": "aeropuerto"
+},
+"airport_aircraft": {
+"ID": "id",
+"Airport_ID": "id del aeropuerto",
+"Aircraft_ID": "id de aeronave",
+"__tabla__": "aeronaves aeroportuarias"
+}
+},
+"restaurant_1": {
+"Student": {
+"StuID": "id de estudiante",
+"LName": "apellido",
+"Fname": "nombre",
+"Age": "edad",
+"Sex": "Sexo",
+"Major": "mayor",
+"Advisor": "advisor",
+"city_code": "Código de la ciudad",
+"__tabla__": "estudiante"
+},
+"Restaurant": {
+"ResID": "restaurante id",
+"ResName": "nombre del restaurante",
+"Address": "dirección",
+"Rating": "calificación",
+"__tabla__": "restaurante"
+},
+"Type_Of_Restaurant": {
+"ResID": "restaurante id",
+"ResTypeID": "Tipo de restaurante id",
+"__tabla__": "tipo de restaurante"
+},
+"Restaurant_Type": {
+"ResTypeID": "Tipo de restaurante id",
+"ResTypeName": "nombre del tipo de restaurante",
+"ResTypeDescription": "Descripción del tipo de restaurante",
+"__tabla__": "Tipo de restaurante"
+},
+"Visits_Restaurant": {
+"StuID": "id de estudiante",
+"ResID": "restaurante id",
+"Time": "hora",
+"Spent": "gastados",
+"__tabla__": "visita restaurante"
+}
+},
+"customers_and_invoices": {
+"Customers": {
+"customer_id": "id del cliente",
+"customer_first_name": "nombre del cliente",
+"customer_middle_initial": "cliente medio inicial",
+"customer_last_name": "apellido del cliente",
+"gender": "género",
+"email_address": "dirección de correo electrónico",
+"login_name": "nombre de inicio de sesión",
+"login_password": "contraseña de inicio de sesión",
+"phone_number": "número de teléfono",
+"town_city": "ciudad",
+"state_county_province": "provincia del condado estatal",
+"country": "país",
+"__tabla__": "clientes"
+},
+"Orders": {
+"order_id": "id de orden",
+"customer_id": "id del cliente",
+"date_order_placed": "fecha en que se realizó el pedido",
+"order_details": "detalles del pedido",
+"__tabla__": "órdenes"
+},
+"Invoices": {
+"invoice_number": "Número de factura",
+"order_id": "id de orden",
+"invoice_date": "Fecha de la factura",
+"__tabla__": "facturas"
+},
+"Accounts": {
+"account_id": "id de cuenta",
+"customer_id": "id del cliente",
+"date_account_opened": "fecha de apertura de la cuenta",
+"account_name": "nombre de la cuenta",
+"other_account_details": "otros detalles de la cuenta",
+"__tabla__": "cuentas"
+},
+"Product_Categories": {
+"production_type_code": "Código de tipo de producción",
+"product_type_description": "Descripción del tipo de producto",
+"vat_rating": "calificación de la cubeta",
+"__tabla__": "categorías de productos"
+},
+"Products": {
+"product_id": "id del producto",
+"parent_product_id": "id de producto padre",
+"production_type_code": "Código de tipo de producción",
+"unit_price": "Precio unitario",
+"product_name": "nombre del producto",
+"product_color": "color del producto",
+"product_size": "Tamaño del producto",
+"__tabla__": "Productos"
+},
+"Financial_Transactions": {
+"transaction_id": "id de transacción",
+"account_id": "id de cuenta",
+"invoice_number": "Número de factura",
+"transaction_type": "Tipo de transacción",
+"transaction_date": "fecha de transacción",
+"transaction_amount": "importe de la transacción",
+"transaction_comment": "comentario sobre la transacción",
+"other_transaction_details": "otros detalles de la transacción",
+"__tabla__": "transacciones financieras"
+},
+"Order_Items": {
+"order_item_id": "id del elemento de pedido",
+"order_id": "id de orden",
+"product_id": "id del producto",
+"product_quantity": "cantidad del producto",
+"other_order_item_details": "otros detalles del artículo del pedido",
+"__tabla__": "artículos de pedido"
+},
+"Invoice_Line_Items": {
+"order_item_id": "id del elemento de pedido",
+"invoice_number": "Número de factura",
+"product_id": "id del producto",
+"product_title": "Título del producto",
+"product_quantity": "cantidad del producto",
+"product_price": "Precio del producto",
+"derived_product_cost": "coste del producto derivado",
+"derived_vat_payable": "Cuchara derivada pagadera",
+"derived_total_cost": "coste total derivado",
+"__tabla__": "elementos de la línea de la factura"
+}
+},
+"local_govt_mdm": {
+"Customer_Master_Index": {
+"master_customer_id": "id del cliente maestro",
+"cmi_details": "detalles de la cmi",
+"__tabla__": "Índice maestro del cliente"
+},
+"CMI_Cross_References": {
+"cmi_cross_ref_id": "CMI id de referencia cruzada",
+"master_customer_id": "id del cliente maestro",
+"source_system_code": "código fuente del sistema",
+"__tabla__": "referencias cruzadas de cmi"
+},
+"Council_Tax": {
+"council_tax_id": "id de impuestos del Consejo",
+"cmi_cross_ref_id": "CMI id de referencia cruzada",
+"__tabla__": "impuesto del consejo"
+},
+"Business_Rates": {
+"business_rates_id": "tipos de interés de las empresas id",
+"cmi_cross_ref_id": "CMI id de referencia cruzada",
+"__tabla__": "tipos de cambio de las empresas"
+},
+"Benefits_Overpayments": {
+"council_tax_id": "id de impuestos del Consejo",
+"cmi_cross_ref_id": "CMI cross ref id",
+"__tabla__": "sobrepagos de prestaciones"
+},
+"Parking_Fines": {
+"council_tax_id": "id de impuestos del Consejo",
+"cmi_cross_ref_id": "CMI id de referencia cruzada",
+"__tabla__": "multas de estacionamiento"
+},
+"Rent_Arrears": {
+"council_tax_id": "id de impuestos del Consejo",
+"cmi_cross_ref_id": "CMI id de referencia cruzada",
+"__tabla__": "atrasos en el alquiler"
+},
+"Electoral_Register": {
+"electoral_register_id": "id del registro electoral",
+"cmi_cross_ref_id": "CMI id de referencia cruzada",
+"__tabla__": "Registro electoral"
+}
+},
+"book_2": {
+"publication": {
+"Publication_ID": "id de publicación",
+"Book_ID": "id book",
+"Publisher": "editor",
+"Publication_Date": "Fecha de publicación",
+"Price": "precio",
+"__tabla__": "publicación"
+},
+"book": {
+"Book_ID": "id book",
+"Title": "Título",
+"Issues": "cuestiones",
+"Writer": "escritor",
+"__tabla__": "libro"
+}
+},
+"hr_1": {
+"regions": {
+"REGION_ID": "región id",
+"REGION_NAME": "nombre de la región",
+"__tabla__": "regiones"
+},
+"countries": {
+"COUNTRY_ID": "id país",
+"COUNTRY_NAME": "Nombre del país",
+"REGION_ID": "región id",
+"__tabla__": "países"
+},
+"departments": {
+"DEPARTMENT_ID": "department id",
+"DEPARTMENT_NAME": "nombre del departamento",
+"MANAGER_ID": "manager id",
+"LOCATION_ID": "id de ubicación",
+"__tabla__": "Departamentos"
+},
+"jobs": {
+"JOB_ID": "id de trabajo",
+"JOB_TITLE": "Título del puesto",
+"MIN_SALARY": "salario mínimo",
+"MAX_SALARY": "Salario máximo",
+"__tabla__": "puestos de trabajo"
+},
+"employees": {
+"EMPLOYEE_ID": "id de empleado",
+"FIRST_NAME": "nombre",
+"LAST_NAME": "apellido",
+"EMAIL": "correo electrónico",
+"PHONE_NUMBER": "número de teléfono",
+"HIRE_DATE": "Fecha de alquiler",
+"JOB_ID": "id de trabajo",
+"SALARY": "sueldo",
+"COMMISSION_PCT": "comisión pct",
+"MANAGER_ID": "manager id",
+"DEPARTMENT_ID": "department id",
+"__tabla__": "empleados"
+},
+"job_history": {
+"EMPLOYEE_ID": "id de empleado",
+"START_DATE": "fecha de inicio",
+"END_DATE": "fecha de finalización",
+"JOB_ID": "id de trabajo",
+"DEPARTMENT_ID": "department id",
+"__tabla__": "historial de trabajo"
+},
+"locations": {
+"LOCATION_ID": "id de ubicación",
+"STREET_ADDRESS": "dirección",
+"POSTAL_CODE": "Código postal",
+"CITY": "ciudad",
+"STATE_PROVINCE": "provincia del estado",
+"COUNTRY_ID": "id país",
+"__tabla__": "lugares"
+}
+},
+"soccer_1": {
+"Player_Attributes": {
+"id": "id",
+"player_fifa_api_id": "jugador fifa api id",
+"player_api_id": "jugador api id",
+"date": "fecha",
+"overall_rating": "calificación general",
+"potential": "potencial",
+"preferred_foot": "pie preferido",
+"attacking_work_rate": "Atacando la tasa de trabajo",
+"defensive_work_rate": "tasa de trabajo defensivo",
+"crossing": "cruce",
+"finishing": "acabado",
+"heading_accuracy": "Precisión del encabezado",
+"short_passing": "paso corto",
+"volleys": "Voleas",
+"dribbling": "driblando",
+"curve": "curva",
+"free_kick_accuracy": "Exactitud de patada libre",
+"long_passing": "paso largo",
+"ball_control": "control de bolas",
+"acceleration": "aceleración",
+"sprint_speed": "velocidad de sprint",
+"agility": "agilidad",
+"reactions": "reacciones",
+"balance": "Saldo",
+"shot_power": "potencia de disparo",
+"jumping": "saltar",
+"stamina": "resistencia",
+"strength": "fuerza",
+"long_shots": "tiros largos",
+"aggression": "agresión",
+"interceptions": "interceptaciones",
+"positioning": "posicionamiento",
+"vision": "visión",
+"penalties": "sanciones",
+"marking": "marcaje",
+"standing_tackle": "Tackle de pie",
+"sliding_tackle": "Tablero deslizante",
+"gk_diving": "Submarinismo gk",
+"gk_handling": "Manipulación de gk",
+"gk_kicking": "gk patadas",
+"gk_positioning": "Posicionamiento de gk",
+"gk_reflexes": "Reflejos de gk",
+"__tabla__": "atributos del reproductor"
+},
+"sqlite_sequence": {
+"name": "nombre",
+"seq": "ss",
+"__tabla__": "secuencia sqlite"
+},
+"Player": {
+"id": "id",
+"player_api_id": "jugador api id",
+"player_name": "nombre del jugador",
+"player_fifa_api_id": "jugador fifa api id",
+"birthday": "cumpleaños",
+"height": "altura",
+"weight": "peso",
+"__tabla__": "jugador"
+},
+"League": {
+"id": "id",
+"country_id": "id país",
+"name": "nombre",
+"__tabla__": "liga"
+},
+"Country": {
+"id": "id",
+"name": "nombre",
+"__tabla__": "país"
+},
+"Team": {
+"id": "id",
+"team_api_id": "equipo api id",
+"team_fifa_api_id": "equipo fifa api id",
+"team_long_name": "nombre del equipo",
+"team_short_name": "nombre abreviado del equipo",
+"__tabla__": "equipo"
+},
+"Team_Attributes": {
+"id": "id",
+"team_fifa_api_id": "equipo fifa api id",
+"team_api_id": "equipo api id",
+"date": "fecha",
+"buildUpPlaySpeed": "velocidad de juego de compilación",
+"buildUpPlaySpeedClass": "clase de velocidad de juego de compilación",
+"buildUpPlayDribbling": "juego de construcción dribling",
+"buildUpPlayDribblingClass": "buildup juego dribbling class",
+"buildUpPlayPassing": "buildup play passing",
+"buildUpPlayPassingClass": "buildup play passing class",
+"buildUpPlayPositioningClass": "clase de posicionamiento de juegos de construcción",
+"chanceCreationPassing": "creación de azar pasando",
+"chanceCreationPassingClass": "clase que pasa la creación por casualidad",
+"chanceCreationCrossing": "cruce de la creación de azares",
+"chanceCreationCrossingClass": "clase de cruce de la creación de azar",
+"chanceCreationShooting": "creación de azar tiro",
+"chanceCreationShootingClass": "clase de tiro de creación de azar",
+"chanceCreationPositioningClass": "clase de posicionamiento de creación de azar",
+"defencePressure": "presión de defensa",
+"defencePressureClass": "clase de presión de defensa",
+"defenceAggression": "Agresión contra la defensa",
+"defenceAggressionClass": "clase de agresión de defensa",
+"defenceTeamWidth": "Anchura del equipo de defensa",
+"defenceTeamWidthClass": "clase de anchura del equipo de defensa",
+"defenceDefenderLineClass": "defensa defensor línea de clase",
+"__tabla__": "atributos de equipo"
+}
+},
+"sakila_1": {
+"actor": {
+"actor_id": "actor id",
+"first_name": "nombre",
+"last_name": "apellido",
+"last_update": "última actualización",
+"__tabla__": "actor"
+},
+"address": {
+"address_id": "dirección id",
+"address": "dirección",
+"address2": "dirección2",
+"district": "distrito",
+"city_id": "id de ciudad",
+"postal_code": "Código postal",
+"phone": "teléfono",
+"last_update": "última actualización",
+"__tabla__": "dirección"
+},
+"category": {
+"category_id": "id de la categoría",
+"name": "nombre",
+"last_update": "última actualización",
+"__tabla__": "Categoría"
+},
+"city": {
+"city_id": "id de ciudad",
+"city": "ciudad",
+"country_id": "id país",
+"last_update": "última actualización",
+"__tabla__": "ciudad"
+},
+"country": {
+"country_id": "id país",
+"country": "país",
+"last_update": "última actualización",
+"__tabla__": "país"
+},
+"customer": {
+"customer_id": "id del cliente",
+"store_id": "id de almacenamiento",
+"first_name": "nombre",
+"last_name": "apellido",
+"email": "correo electrónico",
+"address_id": "dirección id",
+"active": "activo",
+"create_date": "crear fecha",
+"last_update": "última actualización",
+"__tabla__": "cliente"
+},
+"film": {
+"film_id": "id de película",
+"title": "Título",
+"description": "Descripción",
+"release_year": "año de lanzamiento",
+"language_id": "id de idioma",
+"original_language_id": "Idioma original id",
+"rental_duration": "Duración del alquiler",
+"rental_rate": "Tasa de alquiler",
+"length": "longitud",
+"replacement_cost": "coste de sustitución",
+"rating": "calificación",
+"special_features": "características especiales",
+"last_update": "última actualización",
+"__tabla__": "película"
+},
+"film_actor": {
+"actor_id": "actor id",
+"film_id": "id de película",
+"last_update": "última actualización",
+"__tabla__": "actor de cine"
+},
+"film_category": {
+"film_id": "id de película",
+"category_id": "id de la categoría",
+"last_update": "última actualización",
+"__tabla__": "categoría de película"
+},
+"film_text": {
+"film_id": "id de película",
+"title": "Título",
+"description": "Descripción",
+"__tabla__": "texto de película"
+},
+"inventory": {
+"inventory_id": "id de inventario",
+"film_id": "id de película",
+"store_id": "id de almacenamiento",
+"last_update": "última actualización",
+"__tabla__": "inventario"
+},
+"language": {
+"language_id": "id de idioma",
+"name": "nombre",
+"last_update": "última actualización",
+"__tabla__": "idioma"
+},
+"payment": {
+"payment_id": "id de pago",
+"customer_id": "id del cliente",
+"staff_id": "id de personal",
+"rental_id": "id de alquiler",
+"amount": "Monto",
+"payment_date": "fecha de pago",
+"last_update": "última actualización",
+"__tabla__": "Pago"
+},
+"rental": {
+"rental_id": "id de alquiler",
+"rental_date": "Fecha de alquiler",
+"inventory_id": "id de inventario",
+"customer_id": "id del cliente",
+"return_date": "fecha de devolución",
+"staff_id": "id de personal",
+"last_update": "última actualización",
+"__tabla__": "alquiler"
+},
+"staff": {
+"staff_id": "id de personal",
+"first_name": "nombre",
+"last_name": "apellido",
+"address_id": "dirección id",
+"picture": "Imagen",
+"email": "correo electrónico",
+"store_id": "id de almacenamiento",
+"active": "activo",
+"username": "nombre de usuario",
+"password": "contraseña",
+"last_update": "última actualización",
+"__tabla__": "Personal"
+},
+"store": {
+"store_id": "id de almacenamiento",
+"manager_staff_id": "personal directivo id",
+"address_id": "dirección id",
+"last_update": "última actualización",
+"__tabla__": "almacenar"
+}
+},
+"college_3": {
+"Student": {
+"StuID": "id de estudiante",
+"LName": "apellido",
+"Fname": "nombre",
+"Age": "edad",
+"Sex": "Sexo",
+"Major": "mayor",
+"Advisor": "advisor",
+"city_code": "Código de la ciudad",
+"__tabla__": "estudiante"
+},
+"Faculty": {
+"FacID": "id de la facultad",
+"Lname": "apellido",
+"Fname": "nombre",
+"Rank": "rango",
+"Sex": "Sexo",
+"Phone": "teléfono",
+"Room": "habitación",
+"Building": "edificio",
+"__tabla__": "Facultad"
+},
+"Department": {
+"DNO": "número de departamento",
+"Division": "división",
+"DName": "nombre del departamento",
+"Room": "habitación",
+"Building": "edificio",
+"DPhone": "Teléfono del departamento",
+"__tabla__": "departamento"
+},
+"Member_of": {
+"FacID": "id de la facultad",
+"DNO": "número de departamento",
+"Appt_Type": "appt type",
+"__tabla__": "miembro de la"
+},
+"Course": {
+"CID": "id de curso",
+"CName": "nombre del curso",
+"Credits": "Créditos",
+"Instructor": "instructor",
+"Days": "días",
+"Hours": "horas",
+"DNO": "número de departamento",
+"__tabla__": "curso"
+},
+"Minor_in": {
+"StuID": "id de estudiante",
+"DNO": "número de departamento",
+"__tabla__": "menor en"
+},
+"Enrolled_in": {
+"StuID": "id de estudiante",
+"CID": "id de curso",
+"Grade": "grado",
+"__tabla__": "matriculado en"
+},
+"Gradeconversion": {
+"lettergrade": "grado de letra",
+"gradepoint": "punto de calificación",
+"__tabla__": "conversión de la categoría"
+}
+},
+"game_injury": {
+"stadium": {
+"id": "id",
+"name": "nombre",
+"Home_Games": "juegos caseros",
+"Average_Attendance": "asistencia media",
+"Total_Attendance": "Asistencia total",
+"Capacity_Percentage": "Porcentaje de capacidad",
+"__tabla__": "estadio"
+},
+"game": {
+"stadium_id": "id del estadio",
+"id": "id",
+"Season": "estación",
+"Date": "fecha",
+"Home_team": "casa equipo",
+"Away_team": "equipo de salida",
+"Score": "puntuación",
+"Competition": "competencia",
+"__tabla__": "juego"
+},
+"injury_accident": {
+"game_id": "id de juego",
+"id": "id",
+"Player": "jugador",
+"Injury": "lesión",
+"Number_of_matches": "número de coincidencias",
+"Source": "fuente",
+"__tabla__": "accidente de lesiones"
+}
+},
+"scholar": {
+"venue": {
+"venueId": "id. del lugar de celebración",
+"venueName": "nombre del lugar de celebración",
+"__tabla__": "lugar de celebración"
+},
+"author": {
+"authorId": "autor id",
+"authorName": "nombre del autor",
+"__tabla__": "autor"
+},
+"dataset": {
+"datasetId": "id del conjunto de datos",
+"datasetName": "nombre del conjunto de datos",
+"__tabla__": "conjunto de datos"
+},
+"journal": {
+"journalId": "journal id",
+"journalName": "nombre de la revista",
+"__tabla__": "journal"
+},
+"keyphrase": {
+"keyphraseId": "id de frase clave",
+"keyphraseName": "nombre de la frase clave",
+"__tabla__": "frase clave"
+},
+"paper": {
+"paperId": "id de papel",
+"title": "Título",
+"venueId": "id. del lugar de celebración",
+"year": "año",
+"numCiting": "número citando",
+"numCitedBy": "número citado por",
+"journalId": "journal id",
+"__tabla__": "papel"
+},
+"cite": {
+"citingPaperId": "citando el documento id",
+"citedPaperId": "cited paper id",
+"__tabla__": "citar"
+},
+"paperDataset": {
+"paperId": "id de papel",
+"datasetId": "id del conjunto de datos",
+"__tabla__": "conjunto de datos en papel"
+},
+"paperKeyphrase": {
+"paperId": "id de papel",
+"keyphraseId": "id de frase clave",
+"__tabla__": "frase clave de papel"
+},
+"writes": {
+"paperId": "id de papel",
+"authorId": "autor id",
+"__tabla__": "escribe"
+}
+},
+"match_season": {
+"country": {
+"Country_id": "id país",
+"Country_name": "Nombre del país",
+"Capital": "capital",
+"Official_native_language": "lengua materna oficial",
+"__tabla__": "país"
+},
+"team": {
+"Team_id": "id de equipo",
+"Name": "nombre",
+"__tabla__": "equipo"
+},
+"match_season": {
+"Season": "estación",
+"Player": "jugador",
+"Position": "posición",
+"Country": "país",
+"Team": "equipo",
+"Draft_Pick_Number": "draft pick number",
+"Draft_Class": "proyecto de clase",
+"College": "Universidad",
+"__tabla__": "temporada de partidos"
+},
+"player": {
+"Player_ID": "id de jugador",
+"Player": "jugador",
+"Years_Played": "años jugados",
+"Total_WL": "total wl",
+"Singles_WL": "singles wl",
+"Doubles_WL": "dobles wl",
+"Team": "equipo",
+"__tabla__": "jugador"
+}
+},
+"manufacturer": {
+"manufacturer": {
+"Manufacturer_ID": "id del fabricante",
+"Open_Year": "Año de apertura",
+"Name": "nombre",
+"Num_of_Factories": "Número de fábricas",
+"Num_of_Shops": "Número de tiendas",
+"__tabla__": "fabricante"
+},
+"furniture": {
+"Furniture_ID": "id de mobiliario",
+"Name": "nombre",
+"Num_of_Component": "Número de componentes",
+"Market_Rate": "tipo de cambio de mercado",
+"__tabla__": "Mobiliario"
+},
+"furniture_manufacte": {
+"Manufacturer_ID": "id del fabricante",
+"Furniture_ID": "id de mobiliario",
+"Price_in_Dollar": "precio en dólares",
+"__tabla__": "Fabricación de muebles"
+}
+},
+"train_station": {
+"station": {
+"Station_ID": "id de la estación",
+"Name": "nombre",
+"Annual_entry_exit": "salida anual de entrada",
+"Annual_interchanges": "intercambios anuales",
+"Total_Passengers": "Total de pasajeros",
+"Location": "ubicación",
+"Main_Services": "servicios principales",
+"Number_of_Platforms": "número de plataformas",
+"__tabla__": "estación"
+},
+"train": {
+"Train_ID": "id de tren",
+"Name": "nombre",
+"Time": "hora",
+"Service": "servicio",
+"__tabla__": "tren"
+},
+"train_station": {
+"Train_ID": "id de tren",
+"Station_ID": "id de la estación",
+"__tabla__": "estación de tren"
+}
+},
+"game_1": {
+"Student": {
+"StuID": "id de estudiante",
+"LName": "apellido",
+"Fname": "nombre",
+"Age": "edad",
+"Sex": "Sexo",
+"Major": "mayor",
+"Advisor": "advisor",
+"city_code": "Código de la ciudad",
+"__tabla__": "estudiante"
+},
+"Video_Games": {
+"GameID": "id de juego",
+"GName": "nombre del juego",
+"GType": "Tipo de juego",
+"__tabla__": "videojuegos"
+},
+"Plays_Games": {
+"StuID": "id de estudiante",
+"GameID": "id de juego",
+"Hours_Played": "horas jugadas",
+"__tabla__": "juega juegos"
+},
+"SportsInfo": {
+"StuID": "id de estudiante",
+"SportName": "nombre del deporte",
+"HoursPerWeek": "horas por semana",
+"GamesPlayed": "juegos jugados",
+"OnScholarship": "sobre la concesión de becas",
+"__tabla__": "Información deportiva"
+}
+},
+"geo": {
+"state": {
+"state_name": "nombre de estado",
+"population": "Población",
+"area": "área",
+"country_name": "Nombre del país",
+"capital": "capital",
+"density": "densidad",
+"__tabla__": "estado"
+},
+"city": {
+"city_name": "nombre de la ciudad",
+"population": "Población",
+"country_name": "Nombre del país",
+"state_name": "nombre de estado",
+"__tabla__": "ciudad"
+},
+"border_info": {
+"state_name": "nombre de estado",
+"border": "frontera",
+"__tabla__": "border info"
+},
+"highlow": {
+"state_name": "nombre de estado",
+"highest_elevation": "elevación más alta",
+"lowest_point": "punto más bajo",
+"highest_point": "punto más alto",
+"lowest_elevation": "elevación más baja",
+"__tabla__": "highlow"
+},
+"lake": {
+"lake_name": "nombre del lago",
+"area": "área",
+"country_name": "Nombre del país",
+"state_name": "nombre de estado",
+"__tabla__": "lago"
+},
+"mountain": {
+"mountain_name": "nombre de la montaña",
+"mountain_altitude": "altitud de montaña",
+"country_name": "Nombre del país",
+"state_name": "nombre de estado",
+"__tabla__": "Montaña"
+},
+"river": {
+"river_name": "nombre del río",
+"length": "longitud",
+"country_name": "Nombre del país",
+"traverse": "atravesar",
+"__tabla__": "río"
+}
+},
+"soccer_2": {
+"College": {
+"cName": "nombre de la universidad",
+"state": "estado",
+"enr": "Inscripción",
+"__tabla__": "Universidad"
+},
+"Player": {
+"pID": "id de jugador",
+"pName": "nombre del jugador",
+"yCard": "sí tarjeta",
+"HS": "horas de capacitación",
+"__tabla__": "jugador"
+},
+"Tryout": {
+"pID": "id de jugador",
+"cName": "nombre de la universidad",
+"pPos": "Posición del jugador",
+"decision": "decisión",
+"__tabla__": "prueba"
+}
+},
+"cre_Theme_park": {
+"Ref_Hotel_Star_Ratings": {
+"star_rating_code": "Código de la calificación de estrella",
+"star_rating_description": "Descripción de la calificación de estrella",
+"__tabla__": "ref hotel star ratings"
+},
+"Locations": {
+"Location_ID": "id de ubicación",
+"Location_Name": "nombre de la ubicación",
+"Address": "dirección",
+"Other_Details": "otros detalles",
+"__tabla__": "lugares"
+},
+"Ref_Attraction_Types": {
+"Attraction_Type_Code": "Código de tipo de atracción",
+"Attraction_Type_Description": "Descripción del tipo de atracción",
+"__tabla__": "tipos de atracción de ref"
+},
+"Visitors": {
+"Tourist_ID": "id turista",
+"Tourist_Details": "información turística",
+"__tabla__": "visitantes"
+},
+"Features": {
+"Feature_ID": "característica id",
+"Feature_Details": "detalles de la característica",
+"__tabla__": "características"
+},
+"Hotels": {
+"hotel_id": "hotel id",
+"star_rating_code": "Código de la calificación de estrella",
+"pets_allowed_yn": "Se admiten animales domésticos",
+"price_range": "rango de precios",
+"other_hotel_details": "otros detalles del hotel",
+"__tabla__": "hoteles"
+},
+"Tourist_Attractions": {
+"Tourist_Attraction_ID": "id de atracción turística",
+"Attraction_Type_Code": "Código de tipo de atracción",
+"Location_ID": "id de ubicación",
+"How_to_Get_There": "cómo llegar allí",
+"Name": "nombre",
+"Description": "Descripción",
+"Opening_Hours": "horas de apertura",
+"Other_Details": "otros detalles",
+"__tabla__": "atracciones turísticas"
+},
+"Street_Markets": {
+"Market_ID": "id de mercado",
+"Market_Details": "Detalles del mercado",
+"__tabla__": "mercados callejeros"
+},
+"Shops": {
+"Shop_ID": "id shop",
+"Shop_Details": "detalles de la tienda",
+"__tabla__": "tiendas"
+},
+"Museums": {
+"Museum_ID": "museum id",
+"Museum_Details": "detalles del museo",
+"__tabla__": "museos"
+},
+"Royal_Family": {
+"Royal_Family_ID": "id de la familia real",
+"Royal_Family_Details": "detalles de la familia real",
+"__tabla__": "familia real"
+},
+"Theme_Parks": {
+"Theme_Park_ID": "id del parque temático",
+"Theme_Park_Details": "los detalles del parque temático",
+"__tabla__": "parques temáticos"
+},
+"Visits": {
+"Visit_ID": "visit id",
+"Tourist_Attraction_ID": "id de atracción turística",
+"Tourist_ID": "id turista",
+"Visit_Date": "fecha de la visita",
+"Visit_Details": "Detalles de la visita",
+"__tabla__": "visitas"
+},
+"Photos": {
+"Photo_ID": "id de foto",
+"Tourist_Attraction_ID": "id de atracción turística",
+"Name": "nombre",
+"Description": "Descripción",
+"Filename": "nombre de archivo",
+"Other_Details": "otros detalles",
+"__tabla__": "fotos"
+},
+"Staff": {
+"Staff_ID": "id de personal",
+"Tourist_Attraction_ID": "id de atracción turística",
+"Name": "nombre",
+"Other_Details": "otros detalles",
+"__tabla__": "Personal"
+},
+"Tourist_Attraction_Features": {
+"Tourist_Attraction_ID": "id de atracción turística",
+"Feature_ID": "característica id",
+"__tabla__": "características de atracción turística"
+}
+},
+"twitter_1": {
+"follows": {
+"f1": "id de usuario",
+"f2": "seguidor id",
+"__tabla__": "a continuación"
+},
+"tweets": {
+"id": "id",
+"uid": "id de usuario",
+"text": "texto",
+"createdate": "crear fecha",
+"__tabla__": "tweets"
+},
+"user_profiles": {
+"uid": "uid",
+"name": "nombre",
+"email": "correo electrónico",
+"partitionid": "id de partición",
+"followers": "seguidores",
+"__tabla__": "perfiles de usuario"
+}
+},
+"election_representative": {
+"election": {
+"Election_ID": "id de las elecciones",
+"Representative_ID": "representante id",
+"Date": "fecha",
+"Votes": "votos",
+"Vote_Percent": "porcentaje de votos",
+"Seats": "asientos",
+"Place": "lugar",
+"__tabla__": "elecciones"
+},
+"representative": {
+"Representative_ID": "representante id",
+"Name": "nombre",
+"State": "estado",
+"Party": "Parte",
+"Lifespan": "vida útil",
+"__tabla__": "representante"
+}
+},
+"wedding": {
+"people": {
+"People_ID": "personas id",
+"Name": "nombre",
+"Country": "país",
+"Is_Male": "es macho",
+"Age": "edad",
+"__tabla__": "personas"
+},
+"church": {
+"Church_ID": "id de la iglesia",
+"Name": "nombre",
+"Organized_by": "organizado por",
+"Open_Date": "fecha de apertura",
+"Continuation_of": "continuación de",
+"__tabla__": "iglesia"
+},
+"wedding": {
+"Church_ID": "id de la iglesia",
+"Male_ID": "id masculino",
+"Female_ID": "id femenino",
+"Year": "año",
+"__tabla__": "boda"
+}
+},
+"news_report": {
+"event": {
+"Event_ID": "event id",
+"Date": "fecha",
+"Venue": "lugar de celebración",
+"Name": "nombre",
+"Event_Attendance": "asistencia a los actos",
+"__tabla__": "evento"
+},
+"journalist": {
+"journalist_ID": "periodista id",
+"Name": "nombre",
+"Nationality": "nacionalidad",
+"Age": "edad",
+"Years_working": "años de trabajo",
+"__tabla__": "periodista"
+},
+"news_report": {
+"journalist_ID": "periodista id",
+"Event_ID": "event id",
+"Work_Type": "Tipo de trabajo",
+"__tabla__": "informe de prensa"
+}
+},
+"wine_1": {
+"grapes": {
+"ID": "id",
+"Grape": "Uvas",
+"Color": "color",
+"__tabla__": "Uvas"
+},
+"appellations": {
+"No": "no",
+"Appelation": "appelation",
+"County": "condado",
+"State": "estado",
+"Area": "área",
+"isAVA": "isava",
+"__tabla__": "denominaciones"
+},
+"wine": {
+"No": "no",
+"Grape": "Uvas",
+"Winery": "bodega",
+"Appelation": "appelation",
+"State": "estado",
+"Name": "nombre",
+"Year": "año",
+"Price": "precio",
+"Score": "puntuación",
+"Cases": "casos",
+"Drink": "bebida",
+"__tabla__": "vino"
+}
+},
+"customers_and_addresses": {
+"Addresses": {
+"address_id": "dirección id",
+"address_content": "contenido de la dirección",
+"city": "ciudad",
+"zip_postcode": "código postal zip",
+"state_province_county": "provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia",
+"country": "país",
+"other_address_details": "otros detalles de la dirección",
+"__tabla__": "direcciones"
+},
+"Products": {
+"product_id": "id del producto",
+"product_details": "Detalles del producto",
+"__tabla__": "Productos"
+},
+"Customers": {
+"customer_id": "id del cliente",
+"payment_method": "método de pago",
+"customer_name": "nombre del cliente",
+"date_became_customer": "fecha se convirtió en cliente",
+"other_customer_details": "otros datos del cliente",
+"__tabla__": "clientes"
+},
+"Customer_Addresses": {
+"customer_id": "id del cliente",
+"address_id": "dirección id",
+"date_address_from": "dirección de la fecha de",
+"address_type": "Tipo de dirección",
+"date_address_to": "dirección de fecha a",
+"__tabla__": "direcciones del cliente"
+},
+"Customer_Contact_Channels": {
+"customer_id": "id del cliente",
+"channel_code": "código de canal",
+"active_from_date": "activo a partir de la fecha",
+"active_to_date": "activos hasta la fecha",
+"contact_number": "Número de contacto",
+"__tabla__": "canales de contacto con el cliente"
+},
+"Customer_Orders": {
+"order_id": "id de orden",
+"customer_id": "id del cliente",
+"order_status": "estado del pedido",
+"order_date": "fecha del pedido",
+"order_details": "detalles del pedido",
+"__tabla__": "pedidos de clientes"
+},
+"Order_Items": {
+"order_id": "id de orden",
+"product_id": "id del producto",
+"order_quantity": "cantidad de pedido",
+"__tabla__": "artículos de pedido"
+}
+},
+"phone_1": {
+"chip_model": {
+"Model_name": "nombre del modelo",
+"Launch_year": "Año de lanzamiento",
+"RAM_MiB": "ram mib",
+"ROM_MiB": "rom mib",
+"Slots": "ranuras",
+"WiFi": "wifi",
+"Bluetooth": "bluetooth",
+"__tabla__": "modelo de chip"
+},
+"screen_mode": {
+"Graphics_mode": "modo gráfico",
+"Char_cells": "celdas de caracteres",
+"Pixels": "píxeles",
+"Hardware_colours": "colores de hardware",
+"used_kb": "kb usado",
+"map": "mapa",
+"Type": "tipo",
+"__tabla__": "modo de pantalla"
+},
+"phone": {
+"Company_name": "Nombre de la empresa",
+"Hardware_Model_name": "nombre del modelo de hardware",
+"Accreditation_type": "tipo de acreditación",
+"Accreditation_level": "nivel de acreditación",
+"Date": "fecha",
+"chip_model": "modelo de chip",
+"screen_mode": "modo de pantalla",
+"__tabla__": "teléfono"
+}
+},
+"wrestler": {
+"wrestler": {
+"Wrestler_ID": "id del luchador",
+"Name": "nombre",
+"Reign": "reinar",
+"Days_held": "días de trabajo",
+"Location": "ubicación",
+"Event": "evento",
+"__tabla__": "luchador"
+},
+"Elimination": {
+"Elimination_ID": "id de eliminación",
+"Wrestler_ID": "id del luchador",
+"Team": "equipo",
+"Eliminated_By": "eliminados por",
+"Elimination_Move": "movimiento de eliminación",
+"Time": "hora",
+"__tabla__": "eliminación"
+}
+},
+"department_management": {
+"department": {
+"Department_ID": "department id",
+"Name": "nombre",
+"Creation": "creación",
+"Ranking": "clasificación",
+"Budget_in_Billions": "Presupuesto en miles de millones",
+"Num_Employees": "Número de empleados",
+"__tabla__": "departamento"
+},
+"head": {
+"head_ID": "id de la cabeza",
+"name": "nombre",
+"born_state": "Estado nacido",
+"age": "edad",
+"__tabla__": "cabeza"
+},
+"management": {
+"department_ID": "department id",
+"head_ID": "id de la cabeza",
+"temporary_acting": "Actos temporales",
+"__tabla__": "de gestión"
+}
+},
+"customers_and_products_contacts": {
+"Addresses": {
+"address_id": "dirección id",
+"line_1_number_building": "construcción de la línea 1 número",
+"city": "ciudad",
+"zip_postcode": "código postal zip",
+"state_province_county": "provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia provincia",
+"country": "país",
+"__tabla__": "direcciones"
+},
+"Products": {
+"product_id": "id del producto",
+"product_type_code": "Código del tipo de producto",
+"product_name": "nombre del producto",
+"product_price": "Precio del producto",
+"__tabla__": "Productos"
+},
+"Customers": {
+"customer_id": "id del cliente",
+"payment_method_code": "Código del método de pago",
+"customer_number": "Número de cliente",
+"customer_name": "nombre del cliente",
+"customer_address": "dirección del cliente",
+"customer_phone": "teléfono del cliente",
+"customer_email": "correo electrónico del cliente",
+"__tabla__": "clientes"
+},
+"Contacts": {
+"contact_id": "id de contacto",
+"customer_id": "id del cliente",
+"gender": "género",
+"first_name": "nombre",
+"last_name": "apellido",
+"contact_phone": "teléfono de contacto",
+"__tabla__": "contactos"
+},
+"Customer_Address_History": {
+"customer_id": "id del cliente",
+"address_id": "dirección id",
+"date_from": "fecha a partir de",
+"date_to": "fecha a",
+"__tabla__": "historial de direcciones del cliente"
+},
+"Customer_Orders": {
+"order_id": "id de orden",
+"customer_id": "id del cliente",
+"order_date": "fecha del pedido",
+"order_status_code": "código de estado del pedido",
+"__tabla__": "pedidos de clientes"
+},
+"Order_Items": {
+"order_item_id": "id del elemento de pedido",
+"order_id": "id de orden",
+"product_id": "id del producto",
+"order_quantity": "cantidad de pedido",
+"__tabla__": "artículos de pedido"
+}
+},
+"company_1": {
+"works_on": {
+"Essn": "empleado ssn",
+"Pno": "Número del proyecto",
+"Hours": "horas",
+"__tabla__": "trabaja en"
+},
+"employee": {
+"Fname": "nombre",
+"Minit": "minit",
+"Lname": "apellido",
+"Ssn": "ssn",
+"Bdate": "fecha de nacimiento",
+"Address": "dirección",
+"Sex": "Sexo",
+"Salary": "sueldo",
+"Super_ssn": "super ssn",
+"Dno": "departamento no",
+"__tabla__": "Asalariado"
+},
+"department": {
+"Dname": "nombre del departamento",
+"Dnumber": "número de departamento",
+"Mgr_ssn": "manager ssn",
+"Mgr_start_date": "fecha de inicio del gestor",
+"__tabla__": "departamento"
+},
+"project": {
+"Pname": "nombre de la dependencia",
+"Pnumber": "número de dependientes",
+"Plocation": "ubicación dependiente",
+"Dnum": "número de departamento",
+"__tabla__": "proyecto"
+},
+"dependent": {
+"Essn": "empleado ssn",
+"Dependent_name": "nombre de la dependencia",
+"Sex": "Sexo",
+"Bdate": "fecha de nacimiento",
+"Relationship": "relación",
+"__tabla__": "dependiente"
+},
+"dept_locations": {
+"Dnumber": "número de departamento",
+"Dlocation": "ubicación del departamento",
+"__tabla__": "emplazamientos de los departamentos"
+}
+},
+"epinions_1": {
+"item": {
+"i_id": "item id",
+"title": "Título",
+"__tabla__": "Tema"
+},
+"review": {
+"a_id": "a id",
+"u_id": "id de usuario",
+"i_id": "item id",
+"rating": "calificación",
+"rank": "rango",
+"__tabla__": "Examen"
+},
+"useracct": {
+"u_id": "id de usuario",
+"name": "nombre",
+"__tabla__": "useracct"
+},
+"trust": {
+"source_u_id": "id del usuario de origen",
+"target_u_id": "id de usuario de destino",
+"trust": "confianza",
+"__tabla__": "confianza"
+}
+},
+"product_catalog": {
+"Attribute_Definitions": {
+"attribute_id": "atributo id",
+"attribute_name": "nombre del atributo",
+"attribute_data_type": "tipo de datos de atributo",
+"__tabla__": "definiciones de atributos"
+},
+"Catalogs": {
+"catalog_id": "id de catálogo",
+"catalog_name": "nombre del catálogo",
+"catalog_publisher": "editor de catálogos",
+"date_of_publication": "Fecha de publicación",
+"date_of_latest_revision": "Fecha de la última revisión",
+"__tabla__": "catálogos"
+},
+"Catalog_Structure": {
+"catalog_level_number": "número de nivel de catálogo",
+"catalog_id": "id de catálogo",
+"catalog_level_name": "nombre de nivel de catálogo",
+"__tabla__": "estructura del catálogo"
+},
+"Catalog_Contents": {
+"catalog_entry_id": "identificación de la entrada del catálogo",
+"catalog_level_number": "número de nivel de catálogo",
+"parent_entry_id": "id de la entrada principal",
+"previous_entry_id": "id de entrada anterior",
+"next_entry_id": "id de entrada siguiente",
+"catalog_entry_name": "nombre de la entrada de catálogo",
+"product_stock_number": "Número de stock del producto",
+"price_in_dollars": "precio en dólares",
+"price_in_euros": "precio en euros",
+"price_in_pounds": "precio en libras",
+"capacity": "capacidad",
+"length": "longitud",
+"height": "altura",
+"width": "anchura",
+"__tabla__": "Contenido del catálogo"
+},
+"Catalog_Contents_Additional_Attributes": {
+"catalog_entry_id": "identificación de la entrada del catálogo",
+"catalog_level_number": "número de nivel de catálogo",
+"attribute_id": "atributo id",
+"attribute_value": "valor del atributo",
+"__tabla__": "contenido del catálogo atributos adicionales"
+}
+}
+}
