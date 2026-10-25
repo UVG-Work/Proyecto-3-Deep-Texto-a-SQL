@@ -1,0 +1,197 @@
+{
+  "baseline": {
+    "EX_ponderada": 0.325,
+    "EX_simple": 0.4,
+    "por_nivel": {
+      "facil": "7/12",
+      "media": "8/16",
+      "dificil": "1/12"
+    },
+    "ejecutan": 22,
+    "errores_por_categoria": {
+      "columna o tabla inexistente": 17,
+      "JOIN": 5,
+      "sintaxis": 1,
+      "filtro": 1
+    },
+    "segundos_promedio": 3.05,
+    "segundos_max": 6.79,
+    "segundos_carga": 14.2,
+    "adapter": null,
+    "autocorreccion": false
+  },
+  "lora_attn": {
+    "EX_ponderada": 0.3875,
+    "EX_simple": 0.475,
+    "por_nivel": {
+      "facil": "10/12",
+      "media": "6/16",
+      "dificil": "3/12"
+    },
+    "ejecutan": 30,
+    "errores_por_categoria": {
+      "filtro": 2,
+      "resultado distinto": 3,
+      "JOIN": 6,
+      "columna o tabla inexistente": 10
+    },
+    "segundos_promedio": 1.86,
+    "segundos_max": 3.71,
+    "segundos_carga": 24.5,
+    "adapter": "checkpoints/lora_attn/adapter",
+    "autocorreccion": false
+  },
+  "lora_all": {
+    "EX_ponderada": 0.45,
+    "EX_simple": 0.55,
+    "por_nivel": {
+      "facil": "10/12",
+      "media": "10/16",
+      "dificil": "2/12"
+    },
+    "ejecutan": 32,
+    "errores_por_categoria": {
+      "filtro": 3,
+      "columna o tabla inexistente": 7,
+      "resultado distinto": 1,
+      "JOIN": 6,
+      "sintaxis": 1
+    },
+    "segundos_promedio": 1.81,
+    "segundos_max": 3.82,
+    "segundos_carga": 13.8,
+    "adapter": "checkpoints/lora_all/adapter",
+    "autocorreccion": false
+  },
+  "lora_all_autocorreccion": {
+    "EX_ponderada": 0.5,
+    "EX_simple": 0.6,
+    "por_nivel": {
+      "facil": "10/12",
+      "media": "12/16",
+      "dificil": "2/12"
+    },
+    "ejecutan": 34,
+    "errores_por_categoria": {
+      "filtro": 3,
+      "resultado distinto": 1,
+      "JOIN": 6,
+      "columna o tabla inexistente": 5,
+      "sintaxis": 1
+    },
+    "segundos_promedio": 2.68,
+    "segundos_max": 12.79,
+    "segundos_carga": 13.4,
+    "adapter": "checkpoints/lora_all/adapter",
+    "autocorreccion": true
+  },
+  "baseline_autocorreccion": {
+    "EX_ponderada": 0.375,
+    "EX_simple": 0.475,
+    "por_nivel": {
+      "facil": "9/12",
+      "media": "9/16",
+      "dificil": "1/12"
+    },
+    "ejecutan": 27,
+    "errores_por_categoria": {
+      "JOIN": 6,
+      "columna o tabla inexistente": 13,
+      "filtro": 1,
+      "agregacion": 1
+    },
+    "segundos_promedio": 4.63,
+    "segundos_max": 11.63,
+    "segundos_carga": 12.6,
+    "adapter": null,
+    "autocorreccion": true
+  },
+  "final": {
+    "EX_ponderada": 0.525,
+    "EX_simple": 0.625,
+    "por_nivel": {
+      "facil": "11/12",
+      "media": "11/16",
+      "dificil": "3/12"
+    },
+    "ejecutan": 32,
+    "errores_por_categoria": {
+      "filtro": 2,
+      "columna o tabla inexistente": 8,
+      "JOIN": 4,
+      "agregacion": 1
+    },
+    "segundos_promedio": 1.89,
+    "segundos_max": 4.62,
+    "segundos_carga": 22.6,
+    "adapter": "checkpoints/lora_final/adapter",
+    "autocorreccion": false
+  },
+  "final_autocorreccion": {
+    "EX_ponderada": 0.55,
+    "EX_simple": 0.65,
+    "por_nivel": {
+      "facil": "11/12",
+      "media": "12/16",
+      "dificil": "3/12"
+    },
+    "ejecutan": 35,
+    "errores_por_categoria": {
+      "filtro": 2,
+      "columna o tabla inexistente": 4,
+      "JOIN": 5,
+      "sintaxis": 1,
+      "agregacion": 2
+    },
+    "segundos_promedio": 3.11,
+    "segundos_max": 18.07,
+    "segundos_carga": 13.4,
+    "adapter": "checkpoints/lora_final/adapter",
+    "autocorreccion": true
+  },
+  "final_fp16_autocorreccion": {
+    "EX_ponderada": 0.6125,
+    "EX_simple": 0.7,
+    "por_nivel": {
+      "facil": "11/12",
+      "media": "13/16",
+      "dificil": "4/12"
+    },
+    "ejecutan": 36,
+    "errores_por_categoria": {
+      "filtro": 2,
+      "columna o tabla inexistente": 3,
+      "JOIN": 4,
+      "sintaxis": 1,
+      "agregacion": 2
+    },
+    "segundos_promedio": 2.73,
+    "segundos_max": 13.09,
+    "segundos_carga": 12.0,
+    "adapter": "adapter/",
+    "autocorreccion": true,
+    "dtype": "fp16"
+  },
+  "baseline_fp16_autocorreccion": {
+    "EX_ponderada": 0.3125,
+    "EX_simple": 0.425,
+    "por_nivel": {
+      "facil": "9/12",
+      "media": "8/16",
+      "dificil": "0/12"
+    },
+    "ejecutan": 27,
+    "errores_por_categoria": {
+      "JOIN": 8,
+      "columna o tabla inexistente": 13,
+      "filtro": 1,
+      "agregacion": 1
+    },
+    "segundos_promedio": 4.72,
+    "segundos_max": 12.97,
+    "segundos_carga": 10.7,
+    "adapter": null,
+    "autocorreccion": true,
+    "dtype": "fp16"
+  }
+}
