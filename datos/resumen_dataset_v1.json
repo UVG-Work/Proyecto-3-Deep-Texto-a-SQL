@@ -1,0 +1,39 @@
+{
+  "pares_spider_validos": 8828,
+  "pares_propios_unicos": 844,
+  "esquemas_propios": 12,
+  "ejemplos_entrenamiento_con_repeticion": 11162,
+  "ejemplos_dev_loss": 238,
+  "preguntas_validacion": 40,
+  "descartes_por_motivo": {
+    "resultado_distinto_sqlite": 408,
+    "error_mysql": 191,
+    "traduccion_perdio_valor": 83,
+    "esquema_demasiado_largo": 183
+  },
+  "total_descartes": 865,
+  "fuentes": {
+    "spider_others": 1645,
+    "spider_train": 6035,
+    "propio": 2532,
+    "spider_dev": 950
+  },
+  "tablas_validacion": [
+    "attendee",
+    "cli",
+    "det_ord",
+    "evt",
+    "evt_sponsor",
+    "mec",
+    "ord_srv",
+    "prov",
+    "rep",
+    "session",
+    "speaker",
+    "sponsor",
+    "srv",
+    "ticket",
+    "veh",
+    "venue"
+  ]
+}
