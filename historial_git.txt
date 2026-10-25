@@ -1,0 +1,248 @@
+commit 2ceb290e87a3947f45270a0e39ebbd400d9d32c0
+Author: Andres Mazariegos <123190520+andresm220@users.noreply.github.com>
+Date:   2026-10-25 14:18:59 -0600
+
+    Bitácora y tabla de contribuciones
+
+ BITACORA.md       | 14 ++++++++++++++
+ CONTRIBUCIONES.md | 24 ++++++++++++++++++++++++
+ 2 files changed, 38 insertions(+)
+
+commit bafa7b43bad08d27311ba1de8cf0b3dca1a1b0f1
+Author: June Herrera <her231038@uvg.edu.gt>
+Date:   2026-10-25 14:18:59 -0600
+
+    README, presentación y predicción justificada de EX
+
+ README.md                 | 293 ++++++++++++++++++++++++++++++++++++++++++++++
+ presentacion.pdf          | Bin 0 -> 470684 bytes
+ scripts/presentacion.html | 272 ++++++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 565 insertions(+)
+
+commit ecd876948f32263cd0bfce8909b79da6df88c420
+Author: Andres Mazariegos <123190520+andresm220@users.noreply.github.com>
+Date:   2026-10-25 14:18:59 -0600
+
+    Notebooks de datos, entrenamiento y evaluación
+
+ notebooks/01_datos.ipynb         | 1312 ++++++++++++++++++++++++++++++++++++++
+ notebooks/02_entrenamiento.ipynb |  274 ++++++++
+ notebooks/03_evaluacion.ipynb    |  925 +++++++++++++++++++++++++++
+ scripts/crear_notebooks.py       |  209 ++++++
+ 4 files changed, 2720 insertions(+)
+
+commit 30ff13771bdff58c6008a8e2f8a346e267fe5f3b
+Author: Andres Mazariegos <123190520+andresm220@users.noreply.github.com>
+Date:   2026-10-25 14:18:58 -0600
+
+    Análisis de errores por categoría y gráficas
+
+ resultados/curva_final.png       | Bin 0 -> 83763 bytes
+ resultados/curvas_loss.png       | Bin 0 -> 106993 bytes
+ resultados/errores_categoria.png | Bin 0 -> 41067 bytes
+ resultados/ex_comparacion.png    | Bin 0 -> 51902 bytes
+ scripts/graficas.py              |  77 +++++++++++++++++++++++++++++++++++++++
+ 5 files changed, 77 insertions(+)
+
+commit 7a650b238d7e0504ed23a51b997569d5e0bad4cc
+Author: June Herrera <her231038@uvg.edu.gt>
+Date:   2026-10-25 14:18:58 -0600
+
+    Verificación en fp16 (T4): EX 0.6125 y baseline 0.3125
+
+ resultados/baseline_fp16_autocorreccion.csv |  41 ++++++
+ resultados/final_fp16_autocorreccion.csv    |  41 ++++++
+ resultados/resumen.json                     | 197 ++++++++++++++++++++++++++++
+ resultados/validacion_propia.csv            |  41 ++++++
+ 4 files changed, 320 insertions(+)
+
+commit 5c34f9fc63479c80e48648a7bfc13564874e966e
+Author: Andres Mazariegos <123190520+andresm220@users.noreply.github.com>
+Date:   2026-10-25 14:18:58 -0600
+
+    Modelo final: config B + datos v2 + 2 épocas (EX 0.55)
+
+ adapter/README.md                   |    207 +
+ adapter/adapter_config.json         |     51 +
+ adapter/adapter_model.safetensors   |    Bin 0 -> 73911112 bytes
+ adapter/chat_template.jinja         |     54 +
+ adapter/tokenizer.json              | 757444 +++++++++++++++++++++++++++++++++
+ adapter/tokenizer_config.json       |     30 +
+ resultados/final.csv                |     41 +
+ resultados/final_autocorreccion.csv |     41 +
+ resultados/metricas_lora_final.json |    704 +
+ 9 files changed, 758572 insertions(+)
+
+commit d68af60beb2225334d076300511acb9789cb42d3
+Author: Andres Mazariegos <123190520+andresm220@users.noreply.github.com>
+Date:   2026-10-25 14:18:54 -0600
+
+    6 esquemas extra dirigidos a errores y dataset v2 (18 esquemas propios)
+
+ datos/descartes.csv                       |   866 ++
+ datos/dev_loss.jsonl                      |   238 +
+ datos/entrenamiento.jsonl                 | 12620 ++++++++++++++++++++++++++++
+ datos/esquemas_propios/cine.jsonl         |    81 +
+ datos/esquemas_propios/cine.sql           |   381 +
+ datos/esquemas_propios/gimnasio.jsonl     |    81 +
+ datos/esquemas_propios/gimnasio.sql       |   420 +
+ datos/esquemas_propios/inmobiliaria.jsonl |    81 +
+ datos/esquemas_propios/inmobiliaria.sql   |   387 +
+ datos/esquemas_propios/logistica.jsonl    |    81 +
+ datos/esquemas_propios/logistica.sql      |   315 +
+ datos/esquemas_propios/proyectos_sw.jsonl |    81 +
+ datos/esquemas_propios/proyectos_sw.sql   |   404 +
+ datos/esquemas_propios/veterinaria.jsonl  |    81 +
+ datos/esquemas_propios/veterinaria.sql    |   368 +
+ datos/resumen_dataset.json                |    39 +
+ 16 files changed, 16524 insertions(+)
+
+commit 3ba3de6ff53b2e9a3c370362ea3e019563963ea5
+Author: Andres Mazariegos <123190520+andresm220@users.noreply.github.com>
+Date:   2026-10-25 14:18:53 -0600
+
+    Experimento de inferencia: autocorrección con ejecutar en baseline y config B
+
+ resultados/baseline_autocorreccion.csv | 41 ++++++++++++++++++++++++++++++++++
+ resultados/lora_all_autocorreccion.csv | 41 ++++++++++++++++++++++++++++++++++
+ 2 files changed, 82 insertions(+)
+
+commit 21c71ef6cf48f9bcd56e1266dd8dbb820e989fe8
+Author: June Herrera <her231038@uvg.edu.gt>
+Date:   2026-10-25 14:18:52 -0600
+
+    Config B (atención + MLP): EX 0.450, confirma la hipótesis
+
+ resultados/lora_all.csv           |  41 +++++
+ resultados/metricas_lora_all.json | 357 ++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 398 insertions(+)
+
+commit 38dfdfff36a96bbc9b280ae737dafa0a08c6ac55
+Author: Andres Mazariegos <123190520+andresm220@users.noreply.github.com>
+Date:   2026-10-25 14:18:52 -0600
+
+    Entrenamiento LoRA config A (atención): logits solo de la respuesta para 8 GB
+
+ resultados/lora_attn.csv           |  41 +++++
+ resultados/metricas_lora_attn.json | 354 +++++++++++++++++++++++++++++++++++++
+ scripts/entrenar.py                | 125 +++++++++++++
+ 3 files changed, 520 insertions(+)
+
+commit 1cccbbef7008f33ace7345b385a9e81133425edd
+Author: June Herrera <her231038@uvg.edu.gt>
+Date:   2026-10-25 14:18:52 -0600
+
+    Evaluación del modelo y baseline sin adapter (EX 0.325)
+
+ resultados/baseline.csv   |  41 +++++++++++++++++++
+ scripts/evaluar_modelo.py | 102 ++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 143 insertions(+)
+
+commit d3e039185867add81c28f702e5251609876317aa
+Author: June Herrera <her231038@uvg.edu.gt>
+Date:   2026-10-25 14:18:51 -0600
+
+    solucion.py: prompt, compactación del esquema y autocorrección con ejecutar
+
+ solucion.py | 132 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 132 insertions(+)
+
+commit ebc6f178ab8add42d3f831b0d3dd7757ffd5de35
+Author: Andres Mazariegos <123190520+andresm220@users.noreply.github.com>
+Date:   2026-10-25 14:18:51 -0600
+
+    Armado del dataset v1, validación propia y registro de descartes
+
+ datos/entrenamiento_v1.jsonl  | 11162 ++++++++++++++++++++++++++++++++++++++++
+ datos/resumen_dataset_v1.json |    39 +
+ datos/validacion_propia.jsonl |    40 +
+ scripts/construir_dataset.py  |   147 +
+ 4 files changed, 11388 insertions(+)
+
+commit 8dd525c9f64c4ada21ffadf37b8be73a2b740909
+Author: Andres Mazariegos <123190520+andresm220@users.noreply.github.com>
+Date:   2026-10-25 14:18:50 -0600
+
+    Traducción de Spider al español protegiendo literales; comentarios en español
+
+ datos/intermedio/spider_comentarios.json | 3573 ++++++++++++
+ datos/intermedio/spider_es.jsonl         | 9094 ++++++++++++++++++++++++++++++
+ scripts/traducir_spider.py               |   90 +
+ 3 files changed, 12757 insertions(+)
+
+commit 745540fff3012109a549fcdf293bc98d68db22a8
+Author: June Herrera <her231038@uvg.edu.gt>
+Date:   2026-10-25 14:18:50 -0600
+
+    Validación propia: taller_mecanico y conference_events, 40 preguntas
+
+ datos/validacion/conference_events.jsonl |  20 ++
+ datos/validacion/conference_events.sql   | 337 ++++++++++++++++++++++++++++++
+ datos/validacion/taller_mecanico.jsonl   |  20 ++
+ datos/validacion/taller_mecanico.sql     | 341 +++++++++++++++++++++++++++++++
+ 4 files changed, 718 insertions(+)
+
+commit f5dbf82b3ea771027d00157080e6c1ab6cee8ce6
+Author: June Herrera <her231038@uvg.edu.gt>
+Date:   2026-10-25 14:18:49 -0600
+
+    Esquemas propios: 12 dominios con COMMENT y 844 pares validados
+
+ datos/esquemas_propios/aerolinea.jsonl        |  71 +++++
+ datos/esquemas_propios/aerolinea.sql          | 314 +++++++++++++++++++++
+ datos/esquemas_propios/banco.jsonl            |  73 +++++
+ datos/esquemas_propios/banco.sql              | 387 ++++++++++++++++++++++++++
+ datos/esquemas_propios/biblioteca.jsonl       |  70 +++++
+ datos/esquemas_propios/biblioteca.sql         | 321 +++++++++++++++++++++
+ datos/esquemas_propios/delivery_comida.jsonl  |  71 +++++
+ datos/esquemas_propios/delivery_comida.sql    | 292 +++++++++++++++++++
+ datos/esquemas_propios/hospital.jsonl         |  70 +++++
+ datos/esquemas_propios/hospital.sql           | 358 ++++++++++++++++++++++++
+ datos/esquemas_propios/hotel.jsonl            |  66 +++++
+ datos/esquemas_propios/hotel.sql              | 316 +++++++++++++++++++++
+ datos/esquemas_propios/inventario.jsonl       |  66 +++++
+ datos/esquemas_propios/inventario.sql         | 258 +++++++++++++++++
+ datos/esquemas_propios/liga_futbol.jsonl      |  66 +++++
+ datos/esquemas_propios/liga_futbol.sql        | 273 ++++++++++++++++++
+ datos/esquemas_propios/musica_streaming.jsonl |  73 +++++
+ datos/esquemas_propios/musica_streaming.sql   | 369 ++++++++++++++++++++++++
+ datos/esquemas_propios/rrhh.jsonl             |  76 +++++
+ datos/esquemas_propios/rrhh.sql               | 377 +++++++++++++++++++++++++
+ datos/esquemas_propios/tienda_online.jsonl    |  71 +++++
+ datos/esquemas_propios/tienda_online.sql      | 348 +++++++++++++++++++++++
+ datos/esquemas_propios/universidad.jsonl      |  71 +++++
+ datos/esquemas_propios/universidad.sql        | 270 ++++++++++++++++++
+ 24 files changed, 4727 insertions(+)
+
+commit bfb32523cfc7e8b7ae6d3d5fb743dce3dde24f29
+Author: Andres Mazariegos <123190520+andresm220@users.noreply.github.com>
+Date:   2026-10-25 14:18:49 -0600
+
+    Conversión de Spider a MySQL 8.4.10 con verificación contra SQLite
+
+ datos/descartes_spider.csv          |  600 +++
+ datos/intermedio/spider_mysql.jsonl | 9094 +++++++++++++++++++++++++++++++++++
+ scripts/spider_a_mysql.py           |  190 +
+ 3 files changed, 9884 insertions(+)
+
+commit ea9cd259ba170c7790c26e369b59e86e327c6890
+Author: June Herrera <her231038@uvg.edu.gt>
+Date:   2026-10-25 14:18:48 -0600
+
+    Evaluador de exactitud por ejecución (EX ponderada) con autotests
+
+ scripts/evaluar.py | 102 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 102 insertions(+)
+
+commit b80a99f6a19c699cd518aa91da86971f42d820d6
+Author: June Herrera <her231038@uvg.edu.gt>
+Date:   2026-10-25 14:18:48 -0600
+
+    Estructura inicial: conexión a MySQL 8.4.10, validador de pares y config
+
+ .gitignore               |  5 +++++
+ config.json              |  6 ++++++
+ requirements.txt         |  7 +++++++
+ scripts/db.py            | 50 ++++++++++++++++++++++++++++++++++++++++++++++++
+ scripts/validar_pares.py | 29 ++++++++++++++++++++++++++++
+ 5 files changed, 97 insertions(+)
