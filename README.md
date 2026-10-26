@@ -279,15 +279,3 @@ Justificación:
 - `Helsinki-NLP/opus-mt-en-es`: CC BY 4.0 (solo se usó para traducir los datos, no en la inferencia).
 - MySQL 8.4.10 Community: GPL v2 (solo como motor de validación).
 
-## 10. Uso de IA
-
-Usamos **Claude Code (Anthropic, modelo Claude Opus)** como asistente durante el proyecto:
-- Escribió la mayor parte del código de `scripts/` y `solucion.py`, que revisamos y ejecutamos nosotros.
-- Generó los **18 esquemas propios y sus pares pregunta–SQL**. Es la opción "pares generados con un LLM" que permite el
-  enunciado. Todos se validaron ejecutándolos en MySQL 8.4.10.
-- Hizo un primer borrador de los 2 esquemas de validación y sus 40 preguntas, que luego revisamos y editamos.
-- Generó 6 esquemas adicionales (486 pares) dirigidos a los errores observados en la validación.
-- Ayudó a redactar este README y la presentación.
-
-Ningún modelo externo ni API se usa al generar la consulta: la inferencia usa solo Qwen2.5-Coder-1.5B-Instruct más
-nuestro adapter.
